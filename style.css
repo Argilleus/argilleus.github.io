@@ -15,3 +15,16 @@ p {
     font-size: 18px;
     text-align:center;
 }
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #24292e;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.download-btn:hover {
+  background-color: #2c974b;
+}
