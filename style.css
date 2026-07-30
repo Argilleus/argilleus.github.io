@@ -28,4 +28,18 @@ p {
 }
 .download-btn:hover {
   background-color: #2c974b;
+
+    .thumbnail {
+    width: 150px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+}
 }
