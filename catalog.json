@@ -1,5 +1,6 @@
 [
     {
+        "slug": "gymnopedie",
         "title": "Gymnopédie No. 1",
         "composer": "Erik Satie",
         "period": "Modern",
@@ -13,6 +14,7 @@
     },
 
     {
+        "slug": "cello-suite-1-prelude",
         "title": "Suite à Violoncello Solo No. 1 – Prelude",
         "composer": "Johann Sebastian Bach",
         "period": "Baroque",
@@ -27,6 +29,7 @@
     },
 
     {
+        "slug": "pavane",
         "title": "Pavane pour une infante défunte",
         "composer": "Maurice Ravel",
         "period": "Modern",
