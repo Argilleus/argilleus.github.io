@@ -1,17 +1,17 @@
 body {
-    background-color: #ffffff;
+    background-color: MidnightBlue;
     font-family: Times, Times New Roman, serif;
     margin: 40px;
 }
 
 h1 {
-    color: black;
+    color: white;
     font-size: 64px;
     text-align: center;
 }
 
 p {
-    color: #333;
+    color: white;
     font-size: 18px;
     text-align:center;
 }
