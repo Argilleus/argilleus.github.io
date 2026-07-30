@@ -180,6 +180,8 @@ section h2{
 
     background:white;
 
+    cursor: pointer;
+
     border:1px solid var(--border);
 
     padding:22px;
