@@ -1,11 +1,12 @@
 body {
     background-color: Teal;
-    font-family: Times, Times New Roman, serif;
+    font-family: Arial, sans-serif;
     margin: 40px;
 }
 
 h1 {
     color: white;
+    font-family: Times, Times New Roman, serif;
     font-size: 64px;
     text-align: center;
 }
