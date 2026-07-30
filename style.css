@@ -4,399 +4,243 @@
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
 
-
-/* ---------- Colors ---------- */
-
 :root{
-
     --paper:#f8f6f1;
     --paper-dark:#efebe2;
-
     --text:#2f2b28;
-
     --accent:#1e3557;
-
     --accent-light:#385d90;
-
     --border:#d8d2c6;
-
 }
 
-
-/* ---------- General ---------- */
-
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
-
     margin:0;
-
     background:var(--paper);
-
     color:var(--text);
-
     font-family:"Source Sans 3",sans-serif;
-
-    line-height:1.7;
-
     font-size:18px;
-
+    line-height:1.7;
 }
 
-
-/* ---------- Header ---------- */
-
 header{
-
     text-align:center;
-
     padding:70px 20px 50px;
-
     border-bottom:1px solid var(--border);
-
 }
 
 h1{
-
     margin:0;
-
     font-family:"EB Garamond",serif;
-
     font-size:3.4rem;
-
     font-weight:700;
-
     letter-spacing:1px;
-
 }
 
 .tagline{
-
     margin-top:10px;
-
     font-size:1.2rem;
-
     color:#666;
-
 }
 
-
-/* ---------- Navigation ---------- */
-
-nav{
-
-    margin-top:35px;
-
-}
+nav{margin-top:35px;}
 
 nav a{
-
-    text-decoration:none;
-
-    color:var(--accent);
-
-    font-weight:600;
-
     margin:0 18px;
-
+    text-decoration:none;
+    color:var(--accent);
+    font-weight:600;
     transition:.2s;
-
 }
 
-nav a:hover{
-
-    color:var(--accent-light);
-
-}
-
-
-/* ---------- Main ---------- */
+nav a:hover{color:var(--accent-light);}
 
 main{
-
     width:min(1100px,92%);
-
     margin:auto;
-
 }
 
-
-/* ---------- Sections ---------- */
-
-section{
-
-    margin:80px 0;
-
-}
+section{margin:80px 0;}
 
 section h2{
-
     font-family:"EB Garamond",serif;
-
     font-size:2.2rem;
-
     border-bottom:1px solid var(--border);
-
     padding-bottom:10px;
-
     margin-bottom:30px;
-
 }
-
-
-/* ---------- Hero ---------- */
 
 .hero{
-
-    text-align:center;
-
     max-width:750px;
-
     margin:70px auto;
-
+    text-align:center;
     font-size:1.15rem;
-
 }
-
-
-/* ---------- Music Grid ---------- */
 
 .music-grid{
-
     display:grid;
-
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
     gap:35px;
-
 }
-
-.search-box{
-    margin:20px 0;
-}
-
-.search-box input{
-    width:100%;
-    max-width:500px;
-    padding:12px 16px;
-    font-size:1rem;
-    border:1px solid #ccc;
-    border-radius:6px;
-    box-sizing:border-box;
-}
-
-
-/* ---------- Card ---------- */
 
 .music-card{
-
-    background:white;
-
-    cursor: pointer;
-
+    background:#fff;
     border:1px solid var(--border);
-
     padding:22px;
-
     text-align:center;
-
+    cursor:pointer;
     transition:.25s;
-
 }
 
 .music-card:hover{
-
     transform:translateY(-4px);
-
     box-shadow:0 10px 24px rgba(0,0,0,.08);
-
 }
-
 
 .thumbnail{
-
     width:100%;
-
+    aspect-ratio:3/4;
+    object-fit:cover;
     display:block;
-
     border:1px solid #ddd;
-
     margin-bottom:20px;
-
 }
-
 
 .composer{
-
     color:#777;
-
-    margin-bottom:4px;
-
-    letter-spacing:.6px;
-
-    text-transform:uppercase;
-
     font-size:.9rem;
-
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    margin-bottom:4px;
 }
-
 
 .music-card h3{
-
+    margin:0 0 20px;
     font-family:"EB Garamond",serif;
-
     font-size:1.6rem;
-
-    margin:0 0 25px;
-
 }
 
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    margin:18px 0 22px;
+}
 
-/* ---------- Buttons ---------- */
+.tags span{
+    background:var(--paper-dark);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:4px 10px;
+    font-size:.8rem;
+}
 
-.download-btn{
-
+.download-btn,.browse-btn{
     display:inline-block;
-
     text-decoration:none;
-
-    color:white;
-
+    color:#fff;
     background:var(--accent);
-
     padding:12px 22px;
-
     border-radius:3px;
-
-    transition:.2s;
-
     font-weight:600;
-
+    transition:.2s;
 }
 
-.download-btn:hover{
-
+.download-btn:hover,.browse-btn:hover{
     background:var(--accent-light);
-
+    color:#fff;
 }
 
-
-/* ---------- Lists ---------- */
-
-ul{
-
-    padding-left:28px;
-
-}
-
-li{
-
-    margin:10px 0;
-
-}
-
-
-/* ---------- Footer ---------- */
-
-footer{
-
-    margin-top:100px;
-
-    padding:50px 0;
-
-    border-top:1px solid var(--border);
-
+.library-header{
+    max-width:800px;
+    margin:60px auto;
     text-align:center;
-
-    font-size:.95rem;
-
-    color:#666;
-
 }
 
-footer a{
-
-    color:var(--accent);
-
+.library-layout{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:40px;
+    align-items:start;
 }
 
-hr{
-
-    border:none;
-
-    border-top:1px solid var(--border);
-
-    margin:40px auto;
-
-    width:250px;
-
+.filter-sidebar{
+    position:sticky;
+    top:30px;
+    background:#fff;
+    border:1px solid var(--border);
+    padding:25px;
 }
 
-
-/* ---------- Links ---------- */
-
-a{
-
-    color:var(--accent);
-
+.filter-sidebar h3{
+    margin-top:0;
+    font-family:"EB Garamond",serif;
 }
 
-a:hover{
-
-    color:var(--accent-light);
-
+.filter-sidebar hr{
+    width:100%;
+    margin:25px 0;
 }
 
-
-/* ---------- Responsive ---------- */
-
-@media(max-width:700px){
-
-    h1{
-
-        font-size:2.5rem;
-
-    }
-
-    nav a{
-
-        display:inline-block;
-
-        margin:8px 12px;
-
-    }
-
+.filter-sidebar label{
+    display:block;
+    margin:10px 0;
+    cursor:pointer;
 }
 
-   
-   /* ===========================
-   COMPOSITION PAGES
-=========================== */
+.filter-sidebar input[type="checkbox"]{margin-right:8px;}
 
-.site-title{
-    color:inherit;
-    text-decoration:none;
-}
-
-.site-title:hover{
-    color:inherit;
-}
-
-.back-link{
-    margin-bottom:30px;
+#searchInput{
+    width:100%;
+    padding:12px;
+    margin-bottom:20px;
+    border:1px solid var(--border);
+    background:#fff;
     font-size:1rem;
 }
+
+.library-summary{margin-bottom:25px;}
+.library-content{min-width:0;}
+
+ul{padding-left:28px;}
+li{margin:10px 0;}
+
+footer{
+    margin-top:100px;
+    padding:50px 0;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:#666;
+    font-size:.95rem;
+}
+
+footer a,a{color:var(--accent);}
+a:hover{color:var(--accent-light);}
+
+hr{
+    border:none;
+    border-top:1px solid var(--border);
+    width:250px;
+    margin:40px auto;
+}
+
+/* Composition pages */
+
+.site-title,.site-title:hover{
+    color:inherit;
+    text-decoration:none;
+}
+
+.back-link{margin-bottom:30px;}
 
 .composition{
     max-width:900px;
     margin:80px auto;
 }
 
-.composition h2{
-    text-align:center;
-}
+.composition h2{text-align:center;}
 
 .composition-thumbnail{
     display:block;
@@ -404,7 +248,7 @@ a:hover{
     max-width:400px;
     margin:40px auto;
     border:1px solid var(--border);
-    background:white;
+    background:#fff;
 }
 
 .composition-info{
@@ -412,8 +256,8 @@ a:hover{
     max-width:500px;
     margin:0 auto 40px;
     border-collapse:collapse;
-    background:white;
     border:1px solid var(--border);
+    background:#fff;
 }
 
 .composition-info th,
@@ -424,13 +268,10 @@ a:hover{
 }
 
 .composition-info tr:last-child th,
-.composition-info tr:last-child td{
-    border-bottom:none;
-}
+.composition-info tr:last-child td{border-bottom:none;}
 
 .composition-info th{
     width:40%;
-    font-weight:600;
     background:var(--paper-dark);
 }
 
@@ -445,13 +286,19 @@ a:hover{
 }
 
 .composition-description h3{
-    font-family:"EB Garamond", serif;
+    font-family:"EB Garamond",serif;
     font-size:1.6rem;
-    margin-bottom:15px;
 }
 
-.composition-description p{
-    margin-bottom:25px;
+@media (max-width:900px){
+    .library-layout{grid-template-columns:1fr;}
+    .filter-sidebar{position:static;}
 }
 
+@media (max-width:700px){
+    h1{font-size:2.5rem;}
+    nav a{
+        display:inline-block;
+        margin:8px 12px;
+    }
 }
