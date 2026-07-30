@@ -9,39 +9,6 @@
     <p>Free sheet music, carefully edited.</p>
     <div>
         <p>Download sheet music of selected works of western classical music in modern, clean editions, available as .pdf files and .mscz files.</p>
-            <div>
-                <iframe
-  src="Gymnopédie n. 1.pdf"
-  width="100%"
-  height="700"
-  style="border:none">
-</iframe>
-                <div>
-                    <canvas id="thumb"></canvas>
-
-<script type="module">
-import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.54/build/pdf.min.mjs";
-
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.54/build/pdf.worker.min.mjs";
-
-const pdf = await pdfjsLib.getDocument("Gymnopédie n. 1.pdf").promise;
-const page = await pdf.getPage(1);
-
-const scale = 0.4;
-const viewport = page.getViewport({ scale });
-
-const canvas = document.getElementById("thumb");
-const ctx = canvas.getContext("2d");
-
-canvas.width = viewport.width;
-canvas.height = viewport.height;
-
-await page.render({
-    canvasContext: ctx,
-    viewport
-}).promise;
-</script>
                 <div>
                 <a href="Gymnopédie n. 1.pdf" download="Gymnopédie n. 1.pdf" class="download-btn">Download pdf</a>
 </body>
