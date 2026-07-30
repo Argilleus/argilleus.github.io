@@ -44,52 +44,73 @@ find music by composer, period, instrumentation, and more.
 
 </section>
 
-<section class="library-controls">
+<section class="library-layout">
 
-<div class="search-box">
+    <aside class="filter-sidebar">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search title, composer, catalogue number..."
->
+        <h3>Search</h3>
 
-</div>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search title, composer...">
 
-<div class="filters">
+        <h3>Composer</h3>
 
-<select id="composerFilter">
-<option value="">All composers</option>
-<option>Bach</option>
-<option>Ravel</option>
-<option>Satie</option>
-</select>
+        <label>
+            <input type="checkbox" class="composer-filter" value="Johann Sebastian Bach">
+            Bach
+        </label>
 
-<select id="periodFilter">
-<option value="">All periods</option>
-<option>Baroque</option>
-<option>Classical</option>
-<option>Romantic</option>
-<option>Modern</option>
-</select>
+        <label>
+            <input type="checkbox" class="composer-filter" value="Erik Satie">
+            Satie
+        </label>
 
-<select id="instrumentFilter">
-<option value="">All instruments</option>
-<option>Piano</option>
-<option>Cello</option>
-<option>Violin</option>
-<option>Organ</option>
-<option>Orchestra</option>
-</select>
+        <label>
+            <input type="checkbox" class="composer-filter" value="Maurice Ravel">
+            Ravel
+        </label>
 
-<select id="sortSelect">
-<option value="title">Sort by Title</option>
-<option value="composer">Composer</option>
-<option value="year">Year</option>
-<option value="newest">Newest</option>
-</select>
+        <h3>Period</h3>
 
-</div>
+        <label>
+            <input type="checkbox" class="period-filter" value="Baroque">
+            Baroque
+        </label>
+
+        <label>
+            <input type="checkbox" class="period-filter" value="Modern">
+            Modern
+        </label>
+
+        <h3>Instrumentation</h3>
+
+        <label>
+            <input type="checkbox" class="instrument-filter" value="Piano">
+            Piano
+        </label>
+
+        <label>
+            <input type="checkbox" class="instrument-filter" value="Cello">
+            Cello
+        </label>
+
+    </aside>
+
+    <section class="library-content">
+
+        <p>
+            Showing <span id="resultCount">3</span> works.
+        </p>
+
+        <div class="music-grid">
+
+            <!-- Your music cards go here -->
+
+        </div>
+
+    </section>
 
 </section>
 
