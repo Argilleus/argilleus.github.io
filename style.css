@@ -387,7 +387,7 @@ a:hover{
 .composition-thumbnail{
     display:block;
     width:100%;
-    max-width:500px;
+    max-width:400px;
     margin:40px auto;
     border:1px solid var(--border);
     background:white;
@@ -395,7 +395,7 @@ a:hover{
 
 .composition-info{
     width:100%;
-    max-width:600px;
+    max-width:500px;
     margin:0 auto 40px;
     border-collapse:collapse;
     background:white;
