@@ -7,8 +7,8 @@
         "instrumentation": ["Piano"],
         "genre": "Piano Solo",
         "year": 1888,
-        "thumbnail": "gymnopedie-thumb.png",
-        "pdf": "Gymnopédie n. 1.pdf",
+        "thumbnail": "images/gymnopedie-thumb.png",
+        "pdf": "pdf/Gymnopédie n. 1.pdf",
         "page": "gymnopedie.html"
     },
 
@@ -21,8 +21,8 @@
         "genre": "Solo Cello",
         "catalogue": "BWV 1007",
         "year": 1720,
-        "thumbnail": "cellosuite-thumb.png",
-        "pdf": "Suite à Violoncello Solo.pdf",
+        "thumbnail": "images/cellosuite-thumb.png",
+        "pdf": "pdf/Suite à Violoncello Solo.pdf",
         "page": "cello-suite-1-prelude.html"
     },
 
@@ -34,8 +34,8 @@
         "instrumentation": ["Piano"],
         "genre": "Piano Solo",
         "year": 1899,
-        "thumbnail": "pavane-thumb.png",
-        "pdf": "Pavane Pour Une Infante Défunte.pdf",
+        "thumbnail": "images/pavane-thumb.png",
+        "pdf": "pdf/Pavane Pour Une Infante Défunte.pdf",
         "page": "pavane.html"
     }
 ]
