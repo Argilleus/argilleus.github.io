@@ -69,11 +69,11 @@ onclick="window.location.href='${work.page}'">
 
     <div class="tags">
 
-        ${work.instrument}
+    ${work.period ? `<span>${work.period}</span>` : ""}
 
-        ${work.period}
+    ${work.instrument ? `<span>${work.instrument}</span>` : ""}
         
-        ${work.century}
+    ${work.century ? `<span>${work.century}</span>` : ""}
 
     </div>
 
