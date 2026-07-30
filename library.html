@@ -1,37 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library | Argilleus Music Library</title>
+
+    <meta name="description"
+          content="Browse the complete collection of free public domain sheet music from Argilleus.">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Argilleus Music Library</h1>
+
+    <p class="tagline">
+        Browse the complete collection.
+    </p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="library.html">Library</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#license">License</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="library-header">
+
+    <h2>Library</h2>
+
+    <p>
+        Browse the complete collection of Argilleus editions.
+        Use the search box and filters to quickly find works
+        by composer, period, or instrumentation.
+    </p>
+
+</section>
+
 <section class="library-layout">
 
     <aside class="filter-sidebar">
 
+        <h3>Search</h3>
+
         <input
+            type="text"
             id="searchInput"
-            placeholder="Search...">
+            placeholder="Search title, composer, catalogue number...">
+
+        <hr>
 
         <h3>Composer</h3>
-        <div id="composerFilters"></div>
+
+        <div id="composerFilters">
+            <!-- Generated automatically -->
+        </div>
+
+        <hr>
 
         <h3>Period</h3>
-        <div id="periodFilters"></div>
+
+        <div id="periodFilters">
+            <!-- Generated automatically -->
+        </div>
+
+        <hr>
 
         <h3>Instrumentation</h3>
-        <div id="instrumentFilters"></div>
+
+        <div id="instrumentFilters">
+            <!-- Generated automatically -->
+        </div>
 
     </aside>
 
     <section class="library-content">
 
-        <p>
-            Showing
-            <span id="resultCount">0</span>
-            works.
-        </p>
+        <div class="library-summary">
+
+            <p>
+                Showing
+                <strong>
+                    <span id="resultCount">0</span>
+                </strong>
+                works.
+            </p>
+
+        </div>
 
         <div
             id="musicGrid"
             class="music-grid">
+
+            <!-- Music cards are generated automatically from catalog.json -->
+
         </div>
+
+            </div>
 
     </section>
 
 </section>
 
+</main>
+
+<footer>
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            Questions, corrections, or suggestions are always welcome.
+        </p>
+
+        <p>
+            <a href="mailto:your@email.com">
+                your@email.com
+            </a>
+        </p>
+
+    </section>
+
+    <hr>
+
+    <p>
+        © 2026 Argilleus.
+    </p>
+
+    <p>
+        The musical compositions published on this website are in the public
+        domain. The digital engravings, layout, and editorial work are
+        © Argilleus unless otherwise stated.
+    </p>
+
+    <p>
+        Use of these editions is governed by the Argilleus Edition License.
+    </p>
+
+</footer>
+
 <script src="library.js"></script>
+
+</body>
+
+</html>
