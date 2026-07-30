@@ -52,6 +52,14 @@
 
     <h2>Featured Scores</h2>
 
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by title or composer..."
+    >
+</div>
+
     <div class="music-grid">
 
        <article class="music-card"
@@ -299,6 +307,30 @@
     </p>
 
 </footer>
+
+    <script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".music-card");
+
+searchInput.addEventListener("input", function () {
+
+    const search = this.value.toLowerCase().trim();
+
+    cards.forEach(card => {
+
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const composer = card.querySelector(".composer").textContent.toLowerCase();
+
+        if (title.includes(search) || composer.includes(search)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+</script>
 
 </body>
 </html>
