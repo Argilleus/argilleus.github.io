@@ -354,4 +354,88 @@ a:hover{
 
     }
 
+   
+   /* ===========================
+   COMPOSITION PAGES
+=========================== */
+
+.site-title{
+    color:inherit;
+    text-decoration:none;
+}
+
+.site-title:hover{
+    color:inherit;
+}
+
+.back-link{
+    margin-bottom:30px;
+    font-size:1rem;
+}
+
+.composition{
+    max-width:900px;
+    margin:80px auto;
+}
+
+.composition h2{
+    text-align:center;
+}
+
+.composition-thumbnail{
+    display:block;
+    width:100%;
+    max-width:700px;
+    margin:40px auto;
+    border:1px solid var(--border);
+    background:white;
+}
+
+.composition-info{
+    width:100%;
+    max-width:600px;
+    margin:0 auto 40px;
+    border-collapse:collapse;
+    background:white;
+    border:1px solid var(--border);
+}
+
+.composition-info th,
+.composition-info td{
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+}
+
+.composition-info tr:last-child th,
+.composition-info tr:last-child td{
+    border-bottom:none;
+}
+
+.composition-info th{
+    width:40%;
+    font-weight:600;
+    background:var(--paper-dark);
+}
+
+.composition .download-btn{
+    display:table;
+    margin:0 auto;
+}
+
+.composition-description{
+    max-width:800px;
+    margin:60px auto;
+}
+
+.composition-description h3{
+    font-family:"EB Garamond", serif;
+    font-size:1.6rem;
+    margin-bottom:15px;
+}
+
+.composition-description p{
+    margin-bottom:25px;
+}
+
 }
