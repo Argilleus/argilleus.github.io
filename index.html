@@ -242,70 +242,7 @@
 
 </footer>
 
-<script>
-
-const featuredGrid = document.getElementById("featuredGrid");
-
-fetch("catalog.json")
-    .then(response => response.json())
-    .then(catalog => {
-
-        const featured = catalog
-            .filter(work => work.featured)
-            .slice(0, 3);
-
-        featured.forEach(work => {
-
-            const article = document.createElement("article");
-
-            article.className = "music-card";
-
-            article.onclick = () => {
-                window.location.href = work.page;
-            };
-
-            article.innerHTML = `
-
-                <img
-                    src="${work.thumbnail}"
-                    alt="${work.title}"
-                    class="thumbnail">
-
-                <p class="composer">
-                    ${work.composer}
-                </p>
-
-                <h3>
-                    ${work.title}
-                </h3>
-
-                <a
-                    href="${work.pdf}"
-                    download
-                    class="download-btn"
-                    onclick="event.stopPropagation();">
-
-                    Download PDF
-
-                </a>
-
-            `;
-
-            featuredGrid.appendChild(article);
-
-        });
-
-    })
-    .catch(error => {
-
-        console.error("Unable to load catalog.json:", error);
-
-        featuredGrid.innerHTML =
-            "<p>Unable to load featured scores.</p>";
-
-    });
-
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>
