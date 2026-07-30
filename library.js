@@ -69,13 +69,11 @@ onclick="window.location.href='${work.page}'">
 
     <div class="tags">
 
-        ${instruments}
+        ${work.instrument}
 
-        <span>${work.period}</span>
-
-        <span>${work.year}</span>
-
-        ${catalogue}
+        ${work.period}
+        
+        ${work.century}
 
     </div>
 
