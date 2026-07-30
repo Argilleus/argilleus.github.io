@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Gymnopédie No. 1",
+        "composer": "Erik Satie",
+        "period": "Modern",
+        "century": 20,
+        "instrumentation": ["Piano"],
+        "genre": "Piano Solo",
+        "year": 1888,
+        "thumbnail": "gymnopedie-thumb.png",
+        "pdf": "Gymnopédie n. 1.pdf",
+        "page": "gymnopedie.html"
+    },
+
+    {
+        "title": "Suite à Violoncello Solo No. 1 – Prelude",
+        "composer": "Johann Sebastian Bach",
+        "period": "Baroque",
+        "century": 18,
+        "instrumentation": ["Cello"],
+        "genre": "Solo Cello",
+        "catalogue": "BWV 1007",
+        "year": 1720,
+        "thumbnail": "cellosuite-thumb.png",
+        "pdf": "Suite à Violoncello Solo.pdf",
+        "page": "cello-suite-1-prelude.html"
+    },
+
+    {
+        "title": "Pavane pour une infante défunte",
+        "composer": "Maurice Ravel",
+        "period": "Modern",
+        "century": 20,
+        "instrumentation": ["Piano"],
+        "genre": "Piano Solo",
+        "year": 1899,
+        "thumbnail": "pavane-thumb.png",
+        "pdf": "Pavane Pour Une Infante Défunte.pdf",
+        "page": "pavane.html"
+    }
+]
