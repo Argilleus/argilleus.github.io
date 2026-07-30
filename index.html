@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Argilleus Music Library | Free Public Domain Sheet Music</title>
 
@@ -10,6 +14,7 @@
           content="Free, carefully engraved editions of public domain classical sheet music. Modern digital scores for reading, printing, and performance.">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -36,9 +41,12 @@
 <section class="hero">
 
     <p>
-        Argilleus provides newly engraved editions of public domain classical music.
-        Unlike scanned historical editions, these scores are digitally engraved for
-        clarity, readability, and high-quality printing.
+        Argilleus provides newly engraved editions of public domain classical
+        music. Unlike scanned historical editions, these scores are digitally
+        engraved for clarity, readability, and high-quality printing.
+    </p>
+
+    <p>
         Every score is available free of charge as a downloadable PDF.
     </p>
 
@@ -49,88 +57,19 @@
 
     <h2>Featured Scores</h2>
 
-<div class="search-box">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by title or composer..."
-    >
-</div>
-
-    <div class="music-grid">
-
-       <article class="music-card"
-         onclick="window.location.href='gymnopedie.html'">
-
-    <img src="gymnopedie-thumb.png"
-         alt="Gymnopédie No. 1 preview"
-         class="thumbnail">
-
-    <p class="composer">
-        Erik Satie
+    <p>
+        A selection of featured editions from the library.
     </p>
 
-    <h3>
-        Gymnopédie No. 1
-    </h3>
+    <p>
+        <a href="library.html" class="browse-btn">
+            Browse the complete library →
+        </a>
+    </p>
 
-    <a href="Gymnopédie n. 1.pdf"
-       download
-       class="download-btn"
-       onclick="event.stopPropagation();">
-        Download PDF
-    </a>
+    <div id="featuredGrid" class="music-grid">
 
-</article>
-
-        <article class="music-card"
-         onclick="window.location.href='cello-suite-1-prelude.html'">
-
-            <img src="cellosuite-thumb.png"
-                 alt="Clair de Lune preview"
-                 class="thumbnail">
-
-            <p class="composer">
-                Johann Sebastian Bach
-            </p>
-
-            <h3>
-                Suite à Violoncello Solo, n. 1, prélude
-            </h3>
-
-            <a href="Suite à Violoncello Solo.pdf"
-               download
-               class="download-btn"
-                onclick="event.stopPropagation();">
-                Download PDF
-            </a>
-
-        </article>
-
-
-       <article class="music-card"
-         onclick="window.location.href='pavane.html'">
-
-            <img src="pavane-thumb.png"
-                 alt="Pavane pour une infante défunte preview"
-                 class="thumbnail">
-
-            <p class="composer">
-                Maurice Ravel
-            </p>
-
-            <h3>
-                Pavane pour une infante défunte
-            </h3>
-
-            <a href="Pavane Pour Une Infante Défunte.pdf"
-               download
-               class="download-btn"
-                onclick="event.stopPropagation();">
-                Download PDF
-            </a>
-
-        </article>
+        <!-- Featured scores are loaded automatically from catalog.json -->
 
     </div>
 
@@ -204,8 +143,7 @@
 
 </section>
 
-
-<section id="license">
+    <section id="license">
 
     <h2>Argilleus Edition License</h2>
 
@@ -268,7 +206,6 @@
 
 </main>
 
-
 <footer>
 
     <section id="contact">
@@ -305,28 +242,69 @@
 
 </footer>
 
-    <script>
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".music-card");
+<script>
 
-searchInput.addEventListener("input", function () {
+const featuredGrid = document.getElementById("featuredGrid");
 
-    const search = this.value.toLowerCase().trim();
+fetch("catalog.json")
+    .then(response => response.json())
+    .then(catalog => {
 
-    cards.forEach(card => {
+        const featured = catalog
+            .filter(work => work.featured)
+            .slice(0, 3);
 
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const composer = card.querySelector(".composer").textContent.toLowerCase();
+        featured.forEach(work => {
 
-        if (title.includes(search) || composer.includes(search)) {
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
+            const article = document.createElement("article");
+
+            article.className = "music-card";
+
+            article.onclick = () => {
+                window.location.href = work.page;
+            };
+
+            article.innerHTML = `
+
+                <img
+                    src="${work.thumbnail}"
+                    alt="${work.title}"
+                    class="thumbnail">
+
+                <p class="composer">
+                    ${work.composer}
+                </p>
+
+                <h3>
+                    ${work.title}
+                </h3>
+
+                <a
+                    href="${work.pdf}"
+                    download
+                    class="download-btn"
+                    onclick="event.stopPropagation();">
+
+                    Download PDF
+
+                </a>
+
+            `;
+
+            featuredGrid.appendChild(article);
+
+        });
+
+    })
+    .catch(error => {
+
+        console.error("Unable to load catalog.json:", error);
+
+        featuredGrid.innerHTML =
+            "<p>Unable to load featured scores.</p>";
 
     });
 
-});
 </script>
 
 </body>
