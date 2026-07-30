@@ -30,7 +30,7 @@ p {
     border-radius: 8px;
     padding: 15px;
     text-align: center;
-    background: white;
+    background: DarkTurquoise;
 }
 
 .title {
@@ -39,7 +39,7 @@ p {
 }
 
     .thumbnail {
-    width: 150px;
+    width: 250px;
     height: auto;
     border: 2px solid #ccc;
     border-radius: 8px;
