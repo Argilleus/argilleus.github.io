@@ -42,8 +42,7 @@
     </p>
 
     <p>
-        Every score is available free of charge as a PDF, with MuseScore (.mscz)
-        files provided where available.
+        Every score is available free of charge as a downloadable PDF.
     </p>
 
 </section>
@@ -55,38 +54,32 @@
 
     <div class="music-grid">
 
-        <article class="music-card">
+       <article class="music-card"
+         onclick="window.location.href='gymnopedie.html'">
 
-            <img src="gymnopedie-thumb.png"
-                 alt="Gymnopédie No. 1 preview"
-                 class="thumbnail">
+    <img src="gymnopedie-thumb.png"
+         alt="Gymnopédie No. 1 preview"
+         class="thumbnail">
 
-            <p class="composer">
-                Erik Satie
-            </p>
+    <p class="composer">
+        Erik Satie
+    </p>
 
-            <h3>
-                Gymnopédie No. 1
-            </h3>
+    <h3>
+        Gymnopédie No. 1
+    </h3>
 
-            <a href="Gymnopédie n. 1.pdf"
-               download
-               class="download-btn">
-                Download PDF
-            </a>
+    <a href="Gymnopédie n. 1.pdf"
+       download
+       class="download-btn"
+       onclick="event.stopPropagation();">
+        Download PDF
+    </a>
 
-            <!--
-            <a href="Gymnopédie n. 1.mscz"
-               download
-               class="download-btn secondary">
-                Download MuseScore
-            </a>
-            -->
+</article>
 
-        </article>
-
-
-        <article class="music-card">
+        <article class="music-card"
+         onclick="window.location.href='cello-suite-1-prelude.html'">
 
             <img src="cellosuite-thumb.png"
                  alt="Clair de Lune preview"
@@ -102,14 +95,16 @@
 
             <a href="Suite à Violoncello Solo.pdf"
                download
-               class="download-btn">
+               class="download-btn"
+                onclick="event.stopPropagation();">
                 Download PDF
             </a>
 
         </article>
 
 
-        <article class="music-card">
+       <article class="music-card"
+         onclick="window.location.href='pavane.html'">
 
             <img src="pavane-thumb.png"
                  alt="Pavane pour une infante défunte preview"
@@ -125,7 +120,8 @@
 
             <a href="Pavane Pour Une Infante Défunte.pdf"
                download
-               class="download-btn">
+               class="download-btn"
+                onclick="event.stopPropagation();">
                 Download PDF
             </a>
 
