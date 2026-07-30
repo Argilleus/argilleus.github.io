@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Library | Argilleus Music Library</title>
+
+<meta name="description"
+      content="Browse the complete collection of free public domain sheet music from Argilleus.">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>Argilleus Music Library</h1>
+
+    <p class="tagline">
+        Browse the complete collection.
+    </p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="library.html">Library</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="library-header">
+
+<h2>Library</h2>
+
+<p>
+Browse all available editions. Use the search box or filters to quickly
+find music by composer, period, instrumentation, and more.
+</p>
+
+</section>
+
+<section class="library-controls">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search title, composer, catalogue number..."
+>
+
+</div>
+
+<div class="filters">
+
+<select id="composerFilter">
+<option value="">All composers</option>
+<option>Bach</option>
+<option>Ravel</option>
+<option>Satie</option>
+</select>
+
+<select id="periodFilter">
+<option value="">All periods</option>
+<option>Baroque</option>
+<option>Classical</option>
+<option>Romantic</option>
+<option>Modern</option>
+</select>
+
+<select id="instrumentFilter">
+<option value="">All instruments</option>
+<option>Piano</option>
+<option>Cello</option>
+<option>Violin</option>
+<option>Organ</option>
+<option>Orchestra</option>
+</select>
+
+<select id="sortSelect">
+<option value="title">Sort by Title</option>
+<option value="composer">Composer</option>
+<option value="year">Year</option>
+<option value="newest">Newest</option>
+</select>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="results">
+
+<p>
+Showing
+<span id="resultCount">3</span>
+works.
+</p>
+
+</div>
+
+<div class="music-grid">
+
+<article
+class="music-card"
+
+data-title="Gymnopédie No. 1"
+data-composer="Erik Satie"
+data-period="Modern"
+data-century="20"
+data-instrument="Piano"
+
+onclick="window.location.href='gymnopedie.html'">
+
+<img
+src="gymnopedie-thumb.png"
+alt="Gymnopédie No. 1"
+class="thumbnail">
+
+<p class="composer">
+Erik Satie
+</p>
+
+<h3>
+Gymnopédie No. 1
+</h3>
+
+<div class="tags">
+<span>Piano</span>
+<span>Modern</span>
+<span>1888</span>
+</div>
+
+<a
+href="Gymnopédie n. 1.pdf"
+download
+class="download-btn"
+onclick="event.stopPropagation();">
+
+Download PDF
+
+</a>
+
+</article>
+
+<article
+class="music-card"
+
+data-title="Suite No. 1"
+data-composer="Johann Sebastian Bach"
+data-period="Baroque"
+data-century="18"
+data-instrument="Cello"
+
+onclick="window.location.href='cello-suite-1-prelude.html'">
+
+<img
+src="cellosuite-thumb.png"
+alt="Cello Suite No. 1"
+class="thumbnail">
+
+<p class="composer">
+Johann Sebastian Bach
+</p>
+
+<h3>
+Suite à Violoncello Solo No. 1 – Prelude
+</h3>
+
+<div class="tags">
+<span>Cello</span>
+<span>Baroque</span>
+<span>BWV 1007</span>
+</div>
+
+<a
+href="Suite à Violoncello Solo.pdf"
+download
+class="download-btn"
+onclick="event.stopPropagation();">
+
+Download PDF
+
+</a>
+
+</article>
+
+<article
+class="music-card"
+
+data-title="Pavane pour une infante défunte"
+data-composer="Maurice Ravel"
+data-period="Modern"
+data-century="20"
+data-instrument="Piano"
+
+onclick="window.location.href='pavane.html'">
+
+<img
+src="pavane-thumb.png"
+alt="Pavane"
+class="thumbnail">
+
+<p class="composer">
+Maurice Ravel
+</p>
+
+<h3>
+Pavane pour une infante défunte
+</h3>
+
+<div class="tags">
+<span>Piano</span>
+<span>Modern</span>
+<span>1899</span>
+</div>
+
+<a
+href="Pavane Pour Une Infante Défunte.pdf"
+download
+class="download-btn"
+onclick="event.stopPropagation();">
+
+Download PDF
+
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<hr>
+
+<p>
+© 2026 Argilleus Music Library.
+</p>
+
+</footer>
+
+<script src="library.js"></script>
+
+</body>
+</html>
