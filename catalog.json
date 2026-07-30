@@ -8,7 +8,7 @@
         "year": 1888,
         "thumbnail": "images/gymnopedie-thumb.png",
         "pdf": "pdf/Gymnopédie n. 1.pdf",
-        "page": "gymnopedie.html",
+        "page": "scores/gymnopedie.html",
         "featured": "true"
     },
 
@@ -22,7 +22,7 @@
         "year": 1720,
         "thumbnail": "images/cellosuite-thumb.png",
         "pdf": "pdf/Suite à Violoncello Solo.pdf",
-        "page": "cello-suite-1-prelude.html",
+        "page": "scores/cello-suite-1-prelude.html",
         "featured": "true"
     },
 
@@ -35,7 +35,7 @@
         "year": 1899,
         "thumbnail": "images/pavane-thumb.png",
         "pdf": "pdf/Pavane Pour Une Infante Défunte.pdf",
-        "page": "pavane.html",
+        "page": "scores/pavane.html",
         "featured": "true"
     }
 ]
