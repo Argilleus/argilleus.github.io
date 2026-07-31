@@ -137,8 +137,6 @@ details summary {
     font-family: var(--font-serif);
     font-size: 2.2rem;
     border-block-end: 1px solid var(--border);
-    padding-block-end: 0.625rem;
-    margin-block-end: 1.875rem;
 }
 
 details summary {
