@@ -5,7 +5,9 @@
         "composer": "Erik Satie",
         "period": "Modern",
         "century": "19th century",
-        "instrumentation": "Piano",
+        "instrumentation": [
+            "Piano"
+        ],
         "year": 1888,
         "thumbnail": "images/gymnopedie-thumb.png",
         "pdf": "pdf/Gymnopédie n. 1.pdf",
@@ -20,7 +22,9 @@
         "composer": "Johann Sebastian Bach",
         "period": "Baroque",
         "century": "18th century",
-        "instrumentation": "Cello",
+        "instrumentation": [
+            "Cello"
+        ],
         "catalogue": "BWV 1007",
         "year": 1720,
         "thumbnail": "images/cellosuite-thumb.png",
@@ -36,7 +40,9 @@
         "composer": "Maurice Ravel",
         "period": "Modern",
         "century": "19th century",
-        "instrumentation": "Piano",
+        "instrumentation": [
+            "Piano"
+        ],
         "year": 1899,
         "thumbnail": "images/pavane-thumb.png",
         "pdf": "pdf/Pavane Pour Une Infante Défunte.pdf",
