@@ -32,6 +32,15 @@ async function loadComposition() {
 
         document.title = `${work.title} | Argilleus Music Library`;
 
+        // Add this to dynamically update the meta description tag:
+const metaDescription = document.querySelector('meta[name="description"]');
+if (metaDescription) {
+    metaDescription.setAttribute(
+        "content",
+        `Free engraved edition of ${work.composer}'s ${work.title}. Download the PDF from Argilleus Music Library.`
+    );
+}
+
         container.innerHTML = `
 
     <h2>${work.title}</h2>
