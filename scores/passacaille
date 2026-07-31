@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Handel Passacaille | Argilleus Music Library</title>
+
+    <meta name="description"
+          content="Free engraved edition of Handel Passacaille. Download the PDF from Argilleus Music Library.">
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>
+        <a href="../index.html" class="site-title">
+            Argilleus Music Library
+        </a>
+    </h1>
+
+    <p class="tagline">
+        Free sheet music, carefully engraved.
+    </p>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../library.html">Library</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="composition">
+
+    <p class="back-link">
+        <a href="../library.html">
+            ← Back to Library
+        </a>
+    </p>
+
+    <div id="compositionContent">
+
+        <!-- Filled automatically by composition.js -->
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <hr>
+
+    <p>© 2026 Argilleus.</p>
+
+    <p>
+        The musical composition is in the public domain. The digital engraving,
+        layout, and editorial work are © Argilleus unless otherwise stated.
+    </p>
+
+</footer>
+
+<script src="../composition.js"></script>
+
+</body>
+</html>
