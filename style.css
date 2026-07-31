@@ -175,13 +175,39 @@ nav {
     }
 }
 
-/* --- Hero --- */
-.hero {
-    max-inline-size: 750px;
-    margin-block: 4.25rem;
-    margin-inline: auto;
-    text-align: center;
-    font-size: 1.15rem;
+/* Search Bar Styling */
+.search-section {
+    max-width: 900px;
+    margin: 2rem auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.search-container {
+    width: 100%;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.25rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+#searchInput:focus {
+    border-color: #333;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    font-size: 1.1rem;
+    color: #666;
+    padding: 2rem 0;
 }
 
 /* --- Music Grid & Cards --- */
