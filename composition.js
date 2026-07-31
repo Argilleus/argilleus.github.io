@@ -86,6 +86,10 @@ async function loadComposition() {
 
     <section class="composition-description">
 
+        <h3>About the Work</h3>
+
+        <p>${work.about}</p>
+
         <h3>About this Edition</h3>
 
         <p>
@@ -94,11 +98,7 @@ async function loadComposition() {
             and high-quality printing while maintaining a clean and
             consistent engraving style.
         </p>
-
-        <h3>About the Work</h3>
-
-        <p>${work.about}</p>
-
+    
     </section>
 
 `;
