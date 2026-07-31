@@ -86,9 +86,9 @@ details summary {
     margin-bottom:30px;
 }
 
-.musicGrid {
+#musicGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 260px));
   /* or: repeat(auto-fill, 250px); */
   gap: 1.5rem;          /* whatever you already use */
   justify-content: start; /* keeps cards left-aligned, no stretching */
@@ -101,6 +101,9 @@ details summary {
     text-align:center;
     cursor:pointer;
     transition:.25s;
+   width: 260px;                    /* lock the card size */
+  max-width: 260px;
+  box-sizing: border-box;
 }
 
 .music-card:hover{
