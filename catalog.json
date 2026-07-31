@@ -27,9 +27,9 @@
         ],
         "catalogue": "BWV 1007",
         "year": 1720,
-        "thumbnail": "images/cellosuite-thumb.png",
-        "pdf": "pdf/Suite à Violoncello Solo.pdf",
-        "page": "scores/cello-suite-1-prelude.html",
+        "thumbnail": "images/cellosuite1.png",
+        "pdf": "pdf/cellosuite1.pdf",
+        "page": "scores/cellosuite1.html",
         "about": "Cello Suite No. 1 in G Major, BWV 1007 is the first of Johann Sebastian Bach's six suites for unaccompanied cello, composed during his years at the court of Köthen. The suite opens with the celebrated Prelude, one of the most recognizable works in the cello repertoire, and continues with a sequence of Baroque dance movements: Allemande, Courante, Sarabande, Menuets I & II, and Gigue. Renowned for its elegance, clarity, and expressive depth, it remains a cornerstone of the solo cello literature.",
         "featured": true
     },
@@ -44,8 +44,8 @@
             "Piano"
         ],
         "year": 1899,
-        "thumbnail": "images/pavane-thumb.png",
-        "pdf": "pdf/Pavane Pour Une Infante Défunte.pdf",
+        "thumbnail": "images/pavane.png",
+        "pdf": "pdf/pavane.pdf",
         "page": "scores/pavane.html",
         "about": "Pavane pour une infante défunte was composed by Maurice Ravel in 1899 for solo piano while he was a student at the Paris Conservatoire. Despite its title, Ravel explained that the work was not intended as a lament for a deceased princess, but rather as an evocation of the slow, stately court dance that a young Spanish infanta might once have danced. With its elegant melody, refined harmonies, and restrained melancholy, the piece has become one of Ravel's best-known compositions and remains a staple of the piano repertoire.",
         "featured": true
