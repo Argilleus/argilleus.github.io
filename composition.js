@@ -70,7 +70,7 @@ async function loadComposition() {
 
                 <tr>
                     <th>Instrumentation</th>
-                    <td>${work.instrument}</td>
+                    <td>${work.instrumentation.join(", ")}</td>
                 </tr>
 
             </table>
