@@ -3,7 +3,7 @@
 // Homepage
 // ===============================
 
-const featuredGrid = document.getElementById("featuredGrid");
+const musicGrid = document.getElementById("musicGrid");
 
 loadFeaturedScores();
 
@@ -32,7 +32,7 @@ async function loadFeaturedScores() {
 
         console.error(error);
 
-        featuredGrid.innerHTML = `
+        musicGrid.innerHTML = `
             <p>
                 Unable to load featured scores.
             </p>
@@ -44,7 +44,7 @@ async function loadFeaturedScores() {
 
 function addFeaturedCard(work) {
 
-    featuredGrid.insertAdjacentHTML("beforeend", `
+    musicGrid.insertAdjacentHTML("beforeend", `
 
         <article
             class="music-card"
