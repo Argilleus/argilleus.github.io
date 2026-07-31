@@ -86,10 +86,12 @@ details summary {
     margin-bottom:30px;
 }
 
-.music-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:35px;
+.musicGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  /* or: repeat(auto-fill, 250px); */
+  gap: 1.5rem;          /* whatever you already use */
+  justify-content: start; /* keeps cards left-aligned, no stretching */
 }
 
 .music-card{
