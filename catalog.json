@@ -78,6 +78,7 @@
         "thumbnail": "images/flutepartita.png",
         "pdf": "pdf/flutepartita.pdf",
         "page": "scores/flutepartita.html",
-        "about": "The Partita in A minor for solo flute, BWV 1013, is a four-movement suite composed by Johann Sebastian Bach around 1722–1723. Consisting of an Allemande, Corrente, Sarabande, and Bourrée anglaise, it is Bach's only surviving work for unaccompanied solo flute and stands as a monumental cornerstone of the instrument's repertoire."
+        "about": "The Partita in A minor for solo flute, BWV 1013, is a four-movement suite composed by Johann Sebastian Bach around 1722–1723. Consisting of an Allemande, Corrente, Sarabande, and Bourrée anglaise, it is Bach's only surviving work for unaccompanied solo flute and stands as a monumental cornerstone of the instrument's repertoire.",
+        "featured": false
     }
 ]
