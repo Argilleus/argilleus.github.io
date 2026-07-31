@@ -116,6 +116,11 @@ hr {
     }
 }
 
+/* Remove default disclosure triangle/arrow */
+details summary {
+  list-style: none; /* Modern browsers */
+}
+
 /* --- Layout Components --- */
 main {
     inline-size: min(1100px, 92%);
