@@ -49,5 +49,21 @@
         "page": "scores/pavane.html",
         "about": "Pavane pour une infante défunte was composed by Maurice Ravel in 1899 for solo piano while he was a student at the Paris Conservatoire. Despite its title, Ravel explained that the work was not intended as a lament for a deceased princess, but rather as an evocation of the slow, stately court dance that a young Spanish infanta might once have danced. With its elegant melody, refined harmonies, and restrained melancholy, the piece has become one of Ravel's best-known compositions and remains a staple of the piano repertoire.",
         "featured": true
+    },
+
+    {
+        "slug": "passacaille",
+        "title": "Passacaille",
+        "composer": "George Frideric Handel",
+        "period": "Baroque",
+        "century": "18th century",
+        "instrumentation": [
+            "Harpsichord"
+        ],
+        "year": 1888,
+        "thumbnail": "images/passacaille.png",
+        "pdf": "pdf/passacaille.pdf",
+        "page": "scores/passacaille.html",
+        "about": "The Passacaille by George Frideric Handel is the final movement of his Harpsichord Suite in G minor (HWV 432), published in 1720."
     }
 ]
