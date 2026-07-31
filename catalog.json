@@ -15,7 +15,6 @@
         "about": "Gymnopédie No. 1 is the first of three Gymnopédies composed by Erik Satie in 1888. Marked Lent et douloureux, the work is characterized by its serene melody, gentle harmonic language, and understated rhythmic flow. Its simplicity and quiet introspection have made it one of Satie's most celebrated compositions and a landmark of the early modern piano repertoire.",
         "featured": true
     },
-
     {
         "slug": "cellosuite1",
         "title": "Suite à Violoncello Solo No. 1 – Prelude",
@@ -33,7 +32,6 @@
         "about": "Cello Suite No. 1 in G Major, BWV 1007 is the first of Johann Sebastian Bach's six suites for unaccompanied cello, composed during his years at the court of Köthen. The suite opens with the celebrated Prelude, one of the most recognizable works in the cello repertoire, and continues with a sequence of Baroque dance movements: Allemande, Courante, Sarabande, Menuets I & II, and Gigue. Renowned for its elegance, clarity, and expressive depth, it remains a cornerstone of the solo cello literature.",
         "featured": true
     },
-
     {
         "slug": "pavane",
         "title": "Pavane pour une infante défunte",
@@ -50,7 +48,6 @@
         "about": "Pavane pour une infante défunte was composed by Maurice Ravel in 1899 for solo piano while he was a student at the Paris Conservatoire. Despite its title, Ravel explained that the work was not intended as a lament for a deceased princess, but rather as an evocation of the slow, stately court dance that a young Spanish infanta might once have danced. With its elegant melody, refined harmonies, and restrained melancholy, the piece has become one of Ravel's best-known compositions and remains a staple of the piano repertoire.",
         "featured": true
     },
-
     {
         "slug": "passacaille",
         "title": "Passacaille",
@@ -66,5 +63,21 @@
         "page": "scores/passacaille.html",
         "about": "The Passacaille by George Frideric Handel is the final movement of his Harpsichord Suite in G minor (HWV 432), published in 1720.",
         "featured": true
+    },
+    {
+        "slug": "flutepartita",
+        "title": "Partita in A Minor for Solo Flute",
+        "composer": "Johann Sebastian Bach",
+        "period": "Baroque",
+        "century": "18th century",
+        "instrumentation": [
+            "Flute"
+        ],
+        "catalogue": "BWV 1013",
+        "year": 1723,
+        "thumbnail": "images/flutepartita.png",
+        "pdf": "pdf/flutepartita.pdf",
+        "page": "scores/flutepartita.html",
+        "about": "The Partita in A minor for solo flute, BWV 1013, is a four-movement suite composed by Johann Sebastian Bach around 1722–1723. Consisting of an Allemande, Corrente, Sarabande, and Bourrée anglaise, it is Bach's only surviving work for unaccompanied solo flute and stands as a monumental cornerstone of the instrument's repertoire.",
     }
 ]
