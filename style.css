@@ -348,7 +348,6 @@ nav {
 
 .composition {
     max-inline-size: 900px;
-    margin-block: 5rem;
     margin-inline: auto;
 
     & h2 {
