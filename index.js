@@ -22,7 +22,6 @@ async function loadFeaturedScores() {
         const featured = catalog
             .filter(work => work.featured)
             .sort((a, b) => (a.featuredOrder || 999) - (b.featuredOrder || 999))
-            .slice(0, 3);
 
         featured.forEach(addFeaturedCard);
 
