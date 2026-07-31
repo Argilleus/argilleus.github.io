@@ -97,7 +97,7 @@ hr {
 }
 
 /* --- Shared Components & Utilities --- */
-:where(.btn, .download-btn, .browse-btn) {
+:is(.btn, .download-btn, .browse-btn) {
     display: inline-block;
     color: #ffffff;
     background-color: var(--accent);
