@@ -9,21 +9,30 @@
     --font-serif: "EB Garamond", serif;
     --font-sans: "Source Sans 3", sans-serif;
 
+    /* Color Palette */
     --paper: #f8f6f1;
     --paper-dark: #efebe2;
+    --surface: #ffffff;
+    
     --text: #2f2b28;
     --text-muted: #666666;
+    --text-subtle: #777777;
+    
     --accent: #1e3557;
     --accent-light: #385d90;
-    --border: #d8d2c6;
     
-    --radius-sm: 3px;
-    --radius-pill: 999px;
+    --border: #d8d2c6;
+    --border-light: #dddddd;
 }
 
 /* --- Base & Reset --- */
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+/* Reset form element fonts */
+input, button, textarea, select {
+    font: inherit;
 }
 
 body {
@@ -35,21 +44,22 @@ body {
     line-height: 1.7;
 }
 
-/* Form Elements Reset */
-input, button, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-}
-
-/* Base Link Styling */
+/* Base Link & Interactive Styling */
 a {
     color: var(--accent);
     text-decoration: none;
     transition: color 0.2s ease;
+}
 
-    &:hover {
-        color: var(--accent-light);
-    }
+a:hover, 
+a:focus-visible {
+    color: var(--accent-light);
+}
+
+/* Global Focus Ring for Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 ul {
@@ -65,6 +75,31 @@ hr {
     border-top: 1px solid var(--border);
     width: 250px;
     margin: 2.5rem auto;
+}
+
+/* --- Shared Components & Utilities --- */
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: var(--accent);
+    padding: 0.75rem 1.375rem;
+    border-radius: 3px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: var(--accent-light);
+    color: #fff;
+}
+
+/* Alias for backward compatibility if needed */
+.download-btn, 
+.browse-btn {
+    composes: btn; /* Conceptually linked */
 }
 
 /* --- Layout Components --- */
@@ -93,14 +128,15 @@ details summary {
 /* --- Header & Navigation --- */
 header {
     text-align: center;
-    padding: 4.375rem 1.25rem 3.125rem;
+    padding: 4.25rem 1.25rem 3rem;
     border-bottom: 1px solid var(--border);
 }
 
 h1 {
     margin: 0;
     font-family: var(--font-serif);
-    font-size: 3.4rem;
+    /* Fluid size: Min 2.5rem, max 3.4rem based on screen width */
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.4rem);
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -112,38 +148,20 @@ h1 {
 }
 
 nav {
-    margin-top: 2.1875rem;
-
-    a {
-        margin: 0 1.125rem;
-        font-weight: 600;
-    }
+    margin-top: 2.25rem;
 }
 
-/* --- Hero & Reusable Utilities --- */
+nav a {
+    margin: 0 1.125rem;
+    font-weight: 600;
+}
+
+/* --- Hero --- */
 .hero {
     max-width: 750px;
-    margin: 4.375rem auto;
+    margin: 4.25rem auto;
     text-align: center;
     font-size: 1.15rem;
-}
-
-/* Consolidated Reusable Button Style */
-.btn,
-.download-btn,
-.browse-btn {
-    display: inline-block;
-    color: #fff;
-    background: var(--accent);
-    padding: 0.75rem 1.375rem;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-
-    &:hover {
-        background: var(--accent-light);
-        color: #fff;
-    }
 }
 
 /* --- Music Grid & Cards --- */
@@ -154,24 +172,19 @@ nav {
 }
 
 .music-card {
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--border);
     padding: 1.375rem;
     text-align: center;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     width: 100%;
+}
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    h3 {
-        margin: 0 0 1.25rem;
-        font-family: var(--font-serif);
-        font-size: 1.6rem;
-    }
+.music-card:hover,
+.music-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .thumbnail {
@@ -179,16 +192,22 @@ nav {
     aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
-    border: 1px solid var(--border); /* Refactored from hardcoded #ddd */
+    border: 1px solid var(--border-light);
     margin-bottom: 1.25rem;
 }
 
 .composer {
-    color: var(--text-muted); /* Refactored from hardcoded #777 */
+    color: var(--text-subtle);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.6px;
     margin-bottom: 0.25rem;
+}
+
+.music-card h3 {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
 }
 
 .tags {
@@ -197,14 +216,14 @@ nav {
     justify-content: center;
     gap: 0.5rem;
     margin: 1.125rem 0 1.375rem;
+}
 
-    span {
-        background: var(--paper-dark);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-pill);
-        padding: 0.25rem 0.625rem;
-        font-size: 0.8rem;
-    }
+.tags span {
+    background: var(--paper-dark);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.8rem;
 }
 
 /* --- Library Page Layout --- */
@@ -224,29 +243,29 @@ nav {
 .filter-sidebar {
     position: sticky;
     top: 1.875rem;
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--border);
-    padding: 1.5625rem;
+    padding: 1.5rem;
+}
 
-    h3 {
-        margin-top: 0;
-        font-family: var(--font-serif);
-    }
+.filter-sidebar h3 {
+    margin-top: 0;
+    font-family: var(--font-serif);
+}
 
-    hr {
-        width: 100%;
-        margin: 1.5625rem 0;
-    }
+.filter-sidebar hr {
+    width: 100%;
+    margin: 1.5rem 0;
+}
 
-    label {
-        display: block;
-        margin: 0.625rem 0;
-        cursor: pointer;
-    }
+.filter-sidebar label {
+    display: block;
+    margin: 0.625rem 0;
+    cursor: pointer;
+}
 
-    input[type="checkbox"] {
-        margin-right: 0.5rem;
-    }
+.filter-sidebar input[type="checkbox"] {
+    margin-right: 0.5rem;
 }
 
 #searchInput {
@@ -254,11 +273,12 @@ nav {
     padding: 0.75rem;
     margin-bottom: 1.25rem;
     border: 1px solid var(--border);
-    background: #fff;
+    background: var(--surface);
+    font-size: 1rem;
 }
 
 .library-summary {
-    margin-bottom: 1.5625rem;
+    margin-bottom: 1.5rem;
 }
 
 .library-content {
@@ -278,15 +298,10 @@ nav {
 .composition {
     max-width: 900px;
     margin: 5rem auto;
+}
 
-    h2 {
-        text-align: center;
-    }
-
-    .download-btn {
-        display: table;
-        margin: 0 auto;
-    }
+.composition h2 {
+    text-align: center;
 }
 
 .composition-thumbnail {
@@ -295,7 +310,7 @@ nav {
     max-width: 400px;
     margin: 2.5rem auto;
     border: 1px solid var(--border);
-    background: #fff;
+    background: var(--surface);
 }
 
 .composition-info {
@@ -304,33 +319,39 @@ nav {
     margin: 0 auto 2.5rem;
     border-collapse: collapse;
     border: 1px solid var(--border);
-    background: #fff;
+    background: var(--surface);
+}
 
-    th, td {
-        padding: 0.875rem 1.125rem;
-        border-bottom: 1px solid var(--border);
-        text-align: left;
-    }
+.composition-info th,
+.composition-info td {
+    padding: 0.875rem 1.125rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
 
-    th {
-        width: 40%;
-        background: var(--paper-dark);
-    }
+.composition-info tr:last-child th,
+.composition-info tr:last-child td {
+    border-bottom: none;
+}
 
-    tr:last-child th,
-    tr:last-child td {
-        border-bottom: none;
-    }
+.composition-info th {
+    width: 40%;
+    background: var(--paper-dark);
+}
+
+.composition .download-btn {
+    display: table;
+    margin: 0 auto;
 }
 
 .composition-description {
     max-width: 800px;
     margin: 3.75rem auto;
+}
 
-    h3 {
-        font-family: var(--font-serif);
-        font-size: 1.6rem;
-    }
+.composition-description h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
 }
 
 /* --- Footer --- */
@@ -354,9 +375,6 @@ footer {
 }
 
 @media (max-width: 700px) {
-    h1 {
-        font-size: 2.5rem;
-    }
     nav a {
         display: inline-block;
         margin: 0.5rem 0.75rem;
