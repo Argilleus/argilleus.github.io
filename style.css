@@ -132,7 +132,7 @@ details summary {
 .tags{
     display:flex;
     flex-wrap:wrap;
-    justify-content:center;
+    min-height: 4.5rem;
     gap:8px;
     margin:18px 0 22px;
 }
