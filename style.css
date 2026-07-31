@@ -8,8 +8,9 @@
 :root {
     color-scheme: light;
 
+    /* Typography */
     --font-serif: "EB Garamond", serif;
-    --font-sans: "Source Sans 3", sans-serif;
+    --font-sans: "Source Sans 3", system-ui, -apple-system, sans-serif;
 
     /* Color Palette */
     --paper: #f8f6f1;
@@ -17,38 +18,57 @@
     --surface: #ffffff;
     
     --text: #2f2b28;
-    --text-muted: #595959; /* Enhanced contrast for accessibility (WCAG AA) */
+    --text-muted: #595959;
     
     --accent: #1e3557;
     --accent-light: #385d90;
     
     --border: #d8d2c6;
     --border-light: #e6e1d7;
+
+    /* Globals */
+    --radius-sm: 3px;
+    --radius-pill: 999px;
+    --transition-fast: 0.2s ease;
+    --transition-med: 0.25s ease;
 }
 
-/* --- Base & Reset --- */
+/* --- Base & Modern Reset --- */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-input, button, textarea, select {
-    font: inherit;
+html {
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
-    background: var(--paper);
+    background-color: var(--paper);
     color: var(--text);
     font-family: var(--font-sans);
     font-size: 1.125rem;
     line-height: 1.7;
 }
 
-/* Base Link & Interactive Styling */
+img, picture, svg, video {
+    display: block;
+    max-inline-size: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+/* --- Global Interactive Elements --- */
 a {
     color: var(--accent);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color var(--transition-fast);
 
     &:hover,
     &:focus-visible {
@@ -56,54 +76,53 @@ a {
     }
 }
 
-/* Global Focus Ring for Accessibility */
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
 ul {
-    padding-left: 1.75rem;
+    padding-inline-start: 1.75rem;
 }
 
 li {
-    margin: 0.625rem 0;
+    margin-block: 0.625rem;
 }
 
 hr {
     border: none;
-    border-top: 1px solid var(--border);
-    width: 250px;
-    margin: 2.5rem auto;
+    border-block-start: 1px solid var(--border);
+    inline-size: 250px;
+    margin-block: 2.5rem;
 }
 
 /* --- Shared Components & Utilities --- */
 :where(.btn, .download-btn, .browse-btn) {
     display: inline-block;
     color: #ffffff;
-    background: var(--accent);
+    background-color: var(--accent);
     padding: 0.75rem 1.375rem;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
     border: none;
     cursor: pointer;
     text-align: center;
-    transition: background-color 0.2s ease;
+    transition: background-color var(--transition-fast);
 
     &:hover,
     &:focus-visible {
-        background: var(--accent-light);
+        background-color: var(--accent-light);
     }
 }
 
 /* --- Layout Components --- */
 main {
-    width: min(1100px, 92%);
-    margin: 0 auto;
+    inline-size: min(1100px, 92%);
+    margin-inline: auto;
 }
 
 section {
-    margin: 5rem 0;
+    margin-block: 5rem;
 }
 
 /* Shared Typography */
@@ -111,9 +130,9 @@ section h2,
 details summary {
     font-family: var(--font-serif);
     font-size: 2.2rem;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.625rem;
-    margin-bottom: 1.875rem;
+    border-block-end: 1px solid var(--border);
+    padding-block-end: 0.625rem;
+    margin-block-end: 1.875rem;
 }
 
 details summary {
@@ -124,7 +143,7 @@ details summary {
 header {
     text-align: center;
     padding: 4.25rem 1.25rem 3rem;
-    border-bottom: 1px solid var(--border);
+    border-block-end: 1px solid var(--border);
 }
 
 h1 {
@@ -136,24 +155,25 @@ h1 {
 }
 
 .tagline {
-    margin-top: 0.625rem;
+    margin-block-start: 0.625rem;
     font-size: 1.2rem;
     color: var(--text-muted);
 }
 
 nav {
-    margin-top: 2.25rem;
+    margin-block-start: 2.25rem;
 
     & a {
-        margin: 0 1.125rem;
+        margin-inline: 1.125rem;
         font-weight: 600;
     }
 }
 
 /* --- Hero --- */
 .hero {
-    max-width: 750px;
-    margin: 4.25rem auto;
+    max-inline-size: 750px;
+    margin-block: 4.25rem;
+    margin-inline: auto;
     text-align: center;
     font-size: 1.15rem;
 }
@@ -166,17 +186,17 @@ nav {
 }
 
 .music-card {
-    background: var(--surface);
+    background-color: var(--surface);
     border: 1px solid var(--border);
     padding: 1.375rem;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform var(--transition-med), box-shadow var(--transition-med);
 
     &:hover,
     &:focus-within {
         transform: translateY(-4px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 24px rgb(0 0 0 / 8%);
     }
 
     & h3 {
@@ -187,12 +207,11 @@ nav {
 }
 
 .thumbnail {
-    width: 100%;
+    inline-size: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    display: block;
     border: 1px solid var(--border-light);
-    margin-bottom: 1.25rem;
+    margin-block-end: 1.25rem;
 }
 
 .composer {
@@ -200,7 +219,7 @@ nav {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    margin-bottom: 0.25rem;
+    margin-block-end: 0.25rem;
 }
 
 .tags {
@@ -208,12 +227,12 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
-    margin: 1.125rem 0 1.375rem;
+    margin-block: 1.125rem 1.375rem;
 
     & span {
-        background: var(--paper-dark);
+        background-color: var(--paper-dark);
         border: 1px solid var(--border);
-        border-radius: 999px;
+        border-radius: var(--radius-pill);
         padding: 0.25rem 0.625rem;
         font-size: 0.8rem;
     }
@@ -221,8 +240,9 @@ nav {
 
 /* --- Library Page Layout --- */
 .library-header {
-    max-width: 800px;
-    margin: 3.75rem auto;
+    max-inline-size: 800px;
+    margin-block: 3.75rem;
+    margin-inline: auto;
     text-align: center;
 }
 
@@ -235,38 +255,38 @@ nav {
 
 .filter-sidebar {
     position: sticky;
-    top: 1.875rem;
-    background: var(--surface);
+    inset-block-start: 1.875rem;
+    background-color: var(--surface);
     border: 1px solid var(--border);
     padding: 1.5rem;
 
     & h3 {
-        margin-top: 0;
+        margin-block-start: 0;
         font-family: var(--font-serif);
     }
 
     & hr {
-        width: 100%;
-        margin: 1.5rem 0;
+        inline-size: 100%;
+        margin-block: 1.5rem;
     }
 
     & label {
         display: block;
-        margin: 0.625rem 0;
+        margin-block: 0.625rem;
         cursor: pointer;
     }
 
     & input[type="checkbox"] {
-        margin-right: 0.5rem;
+        margin-inline-end: 0.5rem;
     }
 }
 
 #searchInput {
-    width: 100%;
+    inline-size: 100%;
     padding: 0.75rem;
-    margin-bottom: 1.25rem;
+    margin-block-end: 1.25rem;
     border: 1px solid var(--border);
-    background: var(--surface);
+    background-color: var(--surface);
     font-size: 1rem;
     
     &:focus-visible {
@@ -275,11 +295,11 @@ nav {
 }
 
 .library-summary {
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
 }
 
 .library-content {
-    min-width: 0;
+    min-inline-size: 0;
 }
 
 /* --- Composition Pages --- */
@@ -292,12 +312,13 @@ nav {
 }
 
 .back-link {
-    margin-bottom: 1.875rem;
+    margin-block-end: 1.875rem;
 }
 
 .composition {
-    max-width: 900px;
-    margin: 5rem auto;
+    max-inline-size: 900px;
+    margin-block: 5rem;
+    margin-inline: auto;
 
     & h2 {
         text-align: center;
@@ -305,49 +326,51 @@ nav {
 
     & .download-btn {
         display: block;
-        width: fit-content;
-        margin: 0 auto;
+        inline-size: max-content;
+        margin-inline: auto;
     }
 }
 
 .composition-thumbnail {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 2.5rem auto;
+    inline-size: 100%;
+    max-inline-size: 400px;
+    margin-block: 2.5rem;
+    margin-inline: auto;
     border: 1px solid var(--border);
-    background: var(--surface);
+    background-color: var(--surface);
 }
 
 .composition-info {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
+    inline-size: 100%;
+    max-inline-size: 500px;
+    margin-inline: auto;
+    margin-block-end: 2.5rem;
     border-collapse: collapse;
     border: 1px solid var(--border);
-    background: var(--surface);
+    background-color: var(--surface);
 
     & th,
     & td {
         padding: 0.875rem 1.125rem;
-        border-bottom: 1px solid var(--border);
-        text-align: left;
+        border-block-end: 1px solid var(--border);
+        text-align: start;
     }
 
     & tr:last-child th,
     & tr:last-child td {
-        border-bottom: none;
+        border-block-end: none;
     }
 
     & th {
-        width: 40%;
-        background: var(--paper-dark);
+        inline-size: 40%;
+        background-color: var(--paper-dark);
     }
 }
 
 .composition-description {
-    max-width: 800px;
-    margin: 3.75rem auto;
+    max-inline-size: 800px;
+    margin-block: 3.75rem;
+    margin-inline: auto;
 
     & h3 {
         font-family: var(--font-serif);
@@ -357,16 +380,16 @@ nav {
 
 /* --- Footer --- */
 footer {
-    margin-top: 6.25rem;
-    padding: 3.125rem 0;
-    border-top: 1px solid var(--border);
+    margin-block-start: 6.25rem;
+    padding-block: 3.125rem;
+    border-block-start: 1px solid var(--border);
     text-align: center;
     color: var(--text-muted);
     font-size: 0.95rem;
 }
 
-/* --- Media Queries --- */
-@media (max-width: 900px) {
+/* --- Media Queries (Modern Syntax) --- */
+@media (width <= 900px) {
     .library-layout {
         grid-template-columns: 1fr;
     }
@@ -375,10 +398,11 @@ footer {
     }
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
     nav a {
         display: inline-block;
-        margin: 0.5rem 0.75rem;
+        margin-block: 0.5rem;
+        margin-inline: 0.75rem;
     }
 }
 
