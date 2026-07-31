@@ -15,14 +15,20 @@
     --surface: #ffffff;
     
     --text: #2f2b28;
-    --text-muted: #666666;
-    --text-subtle: #777777;
+    --text-muted: #595959; /* Improved accessibility contrast */
+    --text-subtle: #666666;
     
     --accent: #1e3557;
     --accent-light: #385d90;
+    --on-accent: #ffffff;
     
     --border: #d8d2c6;
     --border-light: #dddddd;
+
+    /* Shared Elevations & Radii */
+    --radius-sm: 3px;
+    --radius-full: 999px;
+    --shadow-card: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* --- Base & Reset --- */
@@ -30,7 +36,6 @@
     box-sizing: border-box;
 }
 
-/* Reset form element fonts */
 input, button, textarea, select {
     font: inherit;
 }
@@ -82,10 +87,10 @@ hr {
 .download-btn,
 .browse-btn {
     display: inline-block;
-    color: #fff;
+    color: var(--on-accent);
     background: var(--accent);
     padding: 0.75rem 1.375rem;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
     border: none;
     cursor: pointer;
@@ -95,7 +100,7 @@ hr {
     &:hover,
     &:focus-visible {
         background: var(--accent-light);
-        color: #fff;
+        color: var(--on-accent);
     }
 }
 
@@ -107,22 +112,19 @@ main {
 
 section {
     margin: 5rem 0;
-
-    & h2 {
-        font-family: var(--font-serif);
-        font-size: 2.2rem;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 0.625rem;
-        margin-bottom: 1.875rem;
-    }
 }
 
+/* Combined Section & Accordion Headings */
+section h2,
 details summary {
     font-family: var(--font-serif);
     font-size: 2.2rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.625rem;
     margin-bottom: 1.875rem;
+}
+
+details summary {
     cursor: pointer;
 }
 
@@ -136,7 +138,6 @@ header {
 h1 {
     margin: 0;
     font-family: var(--font-serif);
-    /* Fluid size: Min 2.5rem, max 3.4rem based on screen width */
     font-size: clamp(2.5rem, 5vw + 1rem, 3.4rem);
     font-weight: 700;
     letter-spacing: 1px;
@@ -184,7 +185,7 @@ nav {
     &:hover,
     &:focus-within {
         transform: translateY(-4px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        box-shadow: var(--shadow-card);
     }
 
     & h3 {
@@ -204,7 +205,7 @@ nav {
 }
 
 .composer {
-    color: var(--text-subtle);
+    color: var(--text-muted);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.6px;
@@ -221,7 +222,7 @@ nav {
     & span {
         background: var(--paper-dark);
         border: 1px solid var(--border);
-        border-radius: 999px;
+        border-radius: var(--radius-full);
         padding: 0.25rem 0.625rem;
         font-size: 0.8rem;
     }
@@ -276,6 +277,10 @@ nav {
     border: 1px solid var(--border);
     background: var(--surface);
     font-size: 1rem;
+
+    &:focus {
+        border-color: var(--accent);
+    }
 }
 
 .library-summary {
@@ -369,7 +374,7 @@ footer {
     font-size: 0.95rem;
 }
 
-/* --- Media Queries --- */
+/* --- Responsive Media Queries --- */
 @media (max-width: 900px) {
     .library-layout {
         grid-template-columns: 1fr;
