@@ -88,8 +88,8 @@ details summary {
 
 #musicGrid {
   display: grid;
-  /* Use 1fr inside minmax to allow cards to fill available space uniformly */
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+  /* auto-fill leaves empty slot tracks when there are few cards, preventing giant cards */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
@@ -100,10 +100,12 @@ details summary {
   text-align: center;
   cursor: pointer;
   transition: .25s;
-  
-  /* Remove fixed width constraints so cards scale with grid cells */
+
   width: 100%;                  
-  max-width: none;
+  /* Set a hard max-width so a card can NEVER exceed its standard maximum size */
+  max-width: 320px;            
+  /* Keeps the capped card centered in its grid column */
+  margin: 0 auto;              
   box-sizing: border-box;
 }
 
