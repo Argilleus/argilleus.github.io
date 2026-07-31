@@ -41,6 +41,10 @@ function renderCards(list) {
 
     list.forEach(work => {
 
+        const instrumentation = (work.instrumentation || [])
+            .map(i => `<span>${i}</span>`)
+            .join("");
+
         musicGrid.innerHTML += `
 
 <article class="music-card"
@@ -62,7 +66,7 @@ onclick="window.location.href='${work.page}'">
     <div class="tags">
 
         ${work.period ? `<span>${work.period}</span>` : ""}
-        ${work.instrument ? `<span>${work.instrument}</span>` : ""}
+        ${instrumentation}
         ${work.century ? `<span>${work.century}</span>` : ""}
 
     </div>
