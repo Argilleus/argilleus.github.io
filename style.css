@@ -88,21 +88,22 @@ details summary {
 
 #musicGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 260px));
-  /* or: repeat(auto-fill, 250px); */
-  gap: 1.5rem;          /* whatever you already use */
-  justify-content: start; /* keeps cards left-aligned, no stretching */
+  /* Use 1fr inside minmax to allow cards to fill available space uniformly */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+  gap: 1.5rem;
 }
 
-.music-card{
-    background:#fff;
-    border:1px solid var(--border);
-    padding:22px;
-    text-align:center;
-    cursor:pointer;
-    transition:.25s;
-   width: 260px;                    /* lock the card size */
-  max-width: 260px;
+.music-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+  
+  /* Remove fixed width constraints so cards scale with grid cells */
+  width: 100%;                  
+  max-width: none;
   box-sizing: border-box;
 }
 
