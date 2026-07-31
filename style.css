@@ -160,13 +160,13 @@ h1 {
 }
 
 .tagline {
-    margin-block-start: 0.625rem;
+    margin-block-start: 0rem;
     font-size: 1.2rem;
     color: var(--text-muted);
 }
 
 nav {
-    margin-block-start: 2.25rem;
+    margin-block-start: 0rem;
 
     & a {
         margin-inline: 1.125rem;
