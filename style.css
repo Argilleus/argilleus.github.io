@@ -17,14 +17,13 @@
     --surface: #ffffff;
     
     --text: #2f2b28;
-    --text-muted: #666666;
-    --text-subtle: #777777;
+    --text-muted: #595959; /* Enhanced contrast for accessibility (WCAG AA) */
     
     --accent: #1e3557;
     --accent-light: #385d90;
     
     --border: #d8d2c6;
-    --border-light: #dddddd;
+    --border-light: #e6e1d7;
 }
 
 /* --- Base & Reset --- */
@@ -41,7 +40,7 @@ body {
     background: var(--paper);
     color: var(--text);
     font-family: var(--font-sans);
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
     line-height: 1.7;
 }
 
@@ -107,7 +106,7 @@ section {
     margin: 5rem 0;
 }
 
-/* Consolidated Shared Typography */
+/* Shared Typography */
 section h2,
 details summary {
     font-family: var(--font-serif);
@@ -173,7 +172,6 @@ nav {
     text-align: center;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    width: 100%;
 
     &:hover,
     &:focus-within {
@@ -198,7 +196,7 @@ nav {
 }
 
 .composer {
-    color: var(--text-subtle);
+    color: var(--text-muted);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.6px;
@@ -270,6 +268,10 @@ nav {
     border: 1px solid var(--border);
     background: var(--surface);
     font-size: 1rem;
+    
+    &:focus-visible {
+        border-color: var(--accent);
+    }
 }
 
 .library-summary {
@@ -377,5 +379,15 @@ footer {
     nav a {
         display: inline-block;
         margin: 0.5rem 0.75rem;
+    }
+}
+
+/* Accessibility: Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
