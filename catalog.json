@@ -60,10 +60,11 @@
         "instrumentation": [
             "Harpsichord"
         ],
-        "year": 1888,
+        "year": 1720,
         "thumbnail": "images/passacaille.png",
         "pdf": "pdf/passacaille.pdf",
         "page": "scores/passacaille.html",
-        "about": "The Passacaille by George Frideric Handel is the final movement of his Harpsichord Suite in G minor (HWV 432), published in 1720."
+        "about": "The Passacaille by George Frideric Handel is the final movement of his Harpsichord Suite in G minor (HWV 432), published in 1720.",
+        "featured": true
     }
 ]
