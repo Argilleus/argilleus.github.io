@@ -34,57 +34,74 @@ async function loadComposition() {
 
         container.innerHTML = `
 
-            <h2>${work.title}</h2>
+    <h2>${work.title}</h2>
 
-            <img
-                src="../${work.thumbnail}"
-                alt="${work.title}"
-                class="composition-thumbnail">
+    <img
+        src="../${work.thumbnail}"
+        alt="${work.title}"
+        class="composition-thumbnail">
 
-            <table class="composition-info">
+    <table class="composition-info">
 
-                <tr>
-                    <th>Composer</th>
-                    <td>${work.composer}</td>
-                </tr>
+        <tr>
+            <th>Composer</th>
+            <td>${work.composer}</td>
+        </tr>
 
-                <tr>
-                    <th>Title</th>
-                    <td>${work.title}</td>
-                </tr>
+        <tr>
+            <th>Title</th>
+            <td>${work.title}</td>
+        </tr>
 
-                <tr>
-                    <th>Year of Composition</th>
-                    <td>${work.year}</td>
-                </tr>
+        <tr>
+            <th>Year of Composition</th>
+            <td>${work.year}</td>
+        </tr>
 
-                <tr>
-                    <th>Century</th>
-                    <td>${work.century}</td>
-                </tr>
+        <tr>
+            <th>Century</th>
+            <td>${work.century}</td>
+        </tr>
 
-                <tr>
-                    <th>Period</th>
-                    <td>${work.period}</td>
-                </tr>
+        <tr>
+            <th>Period</th>
+            <td>${work.period}</td>
+        </tr>
 
-                <tr>
-                    <th>Instrumentation</th>
-                    <td>${work.instrumentation.join(", ")}</td>
-                </tr>
+        <tr>
+            <th>Instrumentation</th>
+            <td>${work.instrumentation.join(", ")}</td>
+        </tr>
 
-            </table>
+    </table>
 
-            <a
-                href="../${work.pdf}"
-                download
-                class="download-btn">
+    <a
+        href="../${work.pdf}"
+        download
+        class="download-btn">
 
-                Download PDF
+        Download PDF
 
-            </a>
+    </a>
 
-        `;
+    <section class="composition-description">
+
+        <h3>About this Edition</h3>
+
+        <p>
+            This edition has been newly engraved by Argilleus from public
+            domain sources. It has been prepared for clear on-screen reading
+            and high-quality printing while maintaining a clean and
+            consistent engraving style.
+        </p>
+
+        <h3>About the Work</h3>
+
+        <p>${work.about}</p>
+
+    </section>
+
+`;
 
     }
 
