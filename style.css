@@ -4,315 +4,354 @@
 
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
 
-:root{
-    --paper:#f8f6f1;
-    --paper-dark:#efebe2;
-    --text:#2f2b28;
-    --accent:#1e3557;
-    --accent-light:#385d90;
-    --border:#d8d2c6;
+/* --- Root Variables --- */
+:root {
+    --font-serif: "EB Garamond", serif;
+    --font-sans: "Source Sans 3", sans-serif;
+
+    --paper: #f8f6f1;
+    --paper-dark: #efebe2;
+    --text: #2f2b28;
+    --text-muted: #666666;
+    --accent: #1e3557;
+    --accent-light: #385d90;
+    --border: #d8d2c6;
 }
 
-*{box-sizing:border-box;}
-
-body{
-    margin:0;
-    background:var(--paper);
-    color:var(--text);
-    font-family:"Source Sans 3",sans-serif;
-    font-size:18px;
-    line-height:1.7;
+/* --- Base & Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-header{
-    text-align:center;
-    padding:70px 20px 50px;
-    border-bottom:1px solid var(--border);
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
 }
 
-h1{
-    margin:0;
-    font-family:"EB Garamond",serif;
-    font-size:3.4rem;
-    font-weight:700;
-    letter-spacing:1px;
+/* Base Link Styling */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.tagline{
-    margin-top:10px;
-    font-size:1.2rem;
-    color:#666;
+a:hover {
+    color: var(--accent-light);
 }
 
-nav{margin-top:35px;}
-
-nav a{
-    margin:0 18px;
-    text-decoration:none;
-    color:var(--accent);
-    font-weight:600;
-    transition:.2s;
+ul {
+    padding-left: 1.75rem;
 }
 
-nav a:hover{color:var(--accent-light);}
-
-main{
-    width:min(1100px,92%);
-    margin:auto;
+li {
+    margin: 0.625rem 0;
 }
 
-section{margin:80px 0;}
-
-section h2{
-    font-family:"EB Garamond",serif;
-    font-size:2.2rem;
-    border-bottom:1px solid var(--border);
-    padding-bottom:10px;
-    margin-bottom:30px;
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    width: 250px;
+    margin: 2.5rem auto;
 }
 
-.hero{
-    max-width:750px;
-    margin:70px auto;
-    text-align:center;
-    font-size:1.15rem;
+/* --- Layout Components --- */
+main {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+section {
+    margin: 5rem 0;
+}
+
+section h2,
+details summary {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.625rem;
+    margin-bottom: 1.875rem;
 }
 
 details summary {
-   font-family:"EB Garamond",serif;
-    font-size:2.2rem;
-    border-bottom:1px solid var(--border);
-    padding-bottom:10px;
-    margin-bottom:30px;
+    cursor: pointer;
 }
 
+/* --- Header & Navigation --- */
+header {
+    text-align: center;
+    padding: 4.375rem 1.25rem 3.125rem;
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 3.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    margin-top: 0.625rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+nav {
+    margin-top: 2.1875rem;
+}
+
+nav a {
+    margin: 0 1.125rem;
+    font-weight: 600;
+}
+
+/* --- Hero & Shared Utilities --- */
+.hero {
+    max-width: 750px;
+    margin: 4.375rem auto;
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+/* Reusable Button Style */
+.download-btn,
+.browse-btn {
+    display: inline-block;
+    color: #fff;
+    background: var(--accent);
+    padding: 0.75rem 1.375rem;
+    border-radius: 3px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover,
+.browse-btn:hover {
+    background: var(--accent-light);
+    color: #fff;
+}
+
+/* --- Music Grid & Cards --- */
 #musicGrid {
-  display: grid;
-  /* Use 1fr inside minmax to allow cards to fill available space uniformly */
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
 }
 
 .music-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 22px;
-  text-align: center;
-  cursor: pointer;
-  transition: .25s;
-  
-  /* Remove fixed width constraints so cards scale with grid cells */
-  width: 100%;                  
-  max-width: none;
-  box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 1.375rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
 }
 
-.music-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 24px rgba(0,0,0,.08);
+.music-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.thumbnail{
-    width:100%;
-    aspect-ratio:3/4;
-    object-fit:cover;
-    display:block;
-    border:1px solid #ddd;
-    margin-bottom:20px;
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 1.25rem;
 }
 
-.composer{
-    color:#777;
-    font-size:.9rem;
-    text-transform:uppercase;
-    letter-spacing:.6px;
-    margin-bottom:4px;
+.composer {
+    color: #777;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 0.25rem;
 }
 
-.music-card h3{
-    margin:0 0 20px;
-    font-family:"EB Garamond",serif;
-    font-size:1.6rem;
+.music-card h3 {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
 }
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    margin:18px 0 22px;
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.125rem 0 1.375rem;
 }
 
-.tags span{
-    background:var(--paper-dark);
-    border:1px solid var(--border);
-    border-radius:999px;
-    padding:4px 10px;
-    font-size:.8rem;
+.tags span {
+    background: var(--paper-dark);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.625rem;
+    font-size: 0.8rem;
 }
 
-.download-btn,.browse-btn{
-    display:inline-block;
-    text-decoration:none;
-    color:#fff;
-    background:var(--accent);
-    padding:12px 22px;
-    border-radius:3px;
-    font-weight:600;
-    transition:.2s;
+/* --- Library Page Layout --- */
+.library-header {
+    max-width: 800px;
+    margin: 3.75rem auto;
+    text-align: center;
 }
 
-.download-btn:hover,.browse-btn:hover{
-    background:var(--accent-light);
-    color:#fff;
+.library-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2.5rem;
+    align-items: start;
 }
 
-.library-header{
-    max-width:800px;
-    margin:60px auto;
-    text-align:center;
+.filter-sidebar {
+    position: sticky;
+    top: 1.875rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 1.5625rem;
 }
 
-.library-layout{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    gap:40px;
-    align-items:start;
+.filter-sidebar h3 {
+    margin-top: 0;
+    font-family: var(--font-serif);
 }
 
-.filter-sidebar{
-    position:sticky;
-    top:30px;
-    background:#fff;
-    border:1px solid var(--border);
-    padding:25px;
+.filter-sidebar hr {
+    width: 100%;
+    margin: 1.5625rem 0;
 }
 
-.filter-sidebar h3{
-    margin-top:0;
-    font-family:"EB Garamond",serif;
+.filter-sidebar label {
+    display: block;
+    margin: 0.625rem 0;
+    cursor: pointer;
 }
 
-.filter-sidebar hr{
-    width:100%;
-    margin:25px 0;
+.filter-sidebar input[type="checkbox"] {
+    margin-right: 0.5rem;
 }
 
-.filter-sidebar label{
-    display:block;
-    margin:10px 0;
-    cursor:pointer;
+#searchInput {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-size: 1rem;
 }
 
-.filter-sidebar input[type="checkbox"]{margin-right:8px;}
-
-#searchInput{
-    width:100%;
-    padding:12px;
-    margin-bottom:20px;
-    border:1px solid var(--border);
-    background:#fff;
-    font-size:1rem;
+.library-summary {
+    margin-bottom: 1.5625rem;
 }
 
-.library-summary{margin-bottom:25px;}
-.library-content{min-width:0;}
-
-ul{padding-left:28px;}
-li{margin:10px 0;}
-
-footer{
-    margin-top:100px;
-    padding:50px 0;
-    border-top:1px solid var(--border);
-    text-align:center;
-    color:#666;
-    font-size:.95rem;
+.library-content {
+    min-width: 0;
 }
 
-footer a,a{color:var(--accent);}
-a:hover{color:var(--accent-light);}
-
-hr{
-    border:none;
-    border-top:1px solid var(--border);
-    width:250px;
-    margin:40px auto;
+/* --- Composition Pages --- */
+.site-title,
+.site-title:hover {
+    color: inherit;
 }
 
-/* Composition pages */
-
-.site-title,.site-title:hover{
-    color:inherit;
-    text-decoration:none;
+.back-link {
+    margin-bottom: 1.875rem;
 }
 
-.back-link{margin-bottom:30px;}
-
-.composition{
-    max-width:900px;
-    margin:80px auto;
+.composition {
+    max-width: 900px;
+    margin: 5rem auto;
 }
 
-.composition h2{text-align:center;}
-
-.composition-thumbnail{
-    display:block;
-    width:100%;
-    max-width:400px;
-    margin:40px auto;
-    border:1px solid var(--border);
-    background:#fff;
+.composition h2 {
+    text-align: center;
 }
 
-.composition-info{
-    width:100%;
-    max-width:500px;
-    margin:0 auto 40px;
-    border-collapse:collapse;
-    border:1px solid var(--border);
-    background:#fff;
+.composition-thumbnail {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 2.5rem auto;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.composition-info {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    background: #fff;
 }
 
 .composition-info th,
-.composition-info td{
-    padding:14px 18px;
-    border-bottom:1px solid var(--border);
-    text-align:left;
+.composition-info td {
+    padding: 0.875rem 1.125rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
 }
 
 .composition-info tr:last-child th,
-.composition-info tr:last-child td{border-bottom:none;}
-
-.composition-info th{
-    width:40%;
-    background:var(--paper-dark);
+.composition-info tr:last-child td {
+    border-bottom: none;
 }
 
-.composition .download-btn{
-    display:table;
-    margin:0 auto;
+.composition-info th {
+    width: 40%;
+    background: var(--paper-dark);
 }
 
-.composition-description{
-    max-width:800px;
-    margin:60px auto;
+.composition .download-btn {
+    display: table;
+    margin: 0 auto;
 }
 
-.composition-description h3{
-    font-family:"EB Garamond",serif;
-    font-size:1.6rem;
+.composition-description {
+    max-width: 800px;
+    margin: 3.75rem auto;
 }
 
-@media (max-width:900px){
-    .library-layout{grid-template-columns:1fr;}
-    .filter-sidebar{position:static;}
+.composition-description h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
 }
 
-@media (max-width:700px){
-    h1{font-size:2.5rem;}
-    nav a{
-        display:inline-block;
-        margin:8px 12px;
+/* --- Footer --- */
+footer {
+    margin-top: 6.25rem;
+    padding: 3.125rem 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 900px) {
+    .library-layout {
+        grid-template-columns: 1fr;
+    }
+    .filter-sidebar {
+        position: static;
+    }
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    nav a {
+        display: inline-block;
+        margin: 0.5rem 0.75rem;
     }
 }
