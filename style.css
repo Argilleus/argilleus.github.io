@@ -49,11 +49,11 @@ a {
     color: var(--accent);
     text-decoration: none;
     transition: color 0.2s ease;
-}
 
-a:hover, 
-a:focus-visible {
-    color: var(--accent-light);
+    &:hover,
+    &:focus-visible {
+        color: var(--accent-light);
+    }
 }
 
 /* Global Focus Ring for Accessibility */
@@ -78,7 +78,9 @@ hr {
 }
 
 /* --- Shared Components & Utilities --- */
-.btn {
+.btn,
+.download-btn,
+.browse-btn {
     display: inline-block;
     color: #fff;
     background: var(--accent);
@@ -87,19 +89,14 @@ hr {
     font-weight: 600;
     border: none;
     cursor: pointer;
+    text-align: center;
     transition: background-color 0.2s ease;
-}
 
-.btn:hover,
-.btn:focus-visible {
-    background: var(--accent-light);
-    color: #fff;
-}
-
-/* Alias for backward compatibility if needed */
-.download-btn, 
-.browse-btn {
-    composes: btn; /* Conceptually linked */
+    &:hover,
+    &:focus-visible {
+        background: var(--accent-light);
+        color: #fff;
+    }
 }
 
 /* --- Layout Components --- */
@@ -110,18 +107,22 @@ main {
 
 section {
     margin: 5rem 0;
+
+    & h2 {
+        font-family: var(--font-serif);
+        font-size: 2.2rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.625rem;
+        margin-bottom: 1.875rem;
+    }
 }
 
-section h2,
 details summary {
     font-family: var(--font-serif);
     font-size: 2.2rem;
     border-bottom: 1px solid var(--border);
     padding-bottom: 0.625rem;
     margin-bottom: 1.875rem;
-}
-
-details summary {
     cursor: pointer;
 }
 
@@ -149,11 +150,11 @@ h1 {
 
 nav {
     margin-top: 2.25rem;
-}
 
-nav a {
-    margin: 0 1.125rem;
-    font-weight: 600;
+    & a {
+        margin: 0 1.125rem;
+        font-weight: 600;
+    }
 }
 
 /* --- Hero --- */
@@ -179,12 +180,18 @@ nav a {
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     width: 100%;
-}
 
-.music-card:hover,
-.music-card:focus-within {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    &:hover,
+    &:focus-within {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    & h3 {
+        margin: 0 0 1.25rem;
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+    }
 }
 
 .thumbnail {
@@ -204,26 +211,20 @@ nav a {
     margin-bottom: 0.25rem;
 }
 
-.music-card h3 {
-    margin: 0 0 1.25rem;
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-}
-
 .tags {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
     margin: 1.125rem 0 1.375rem;
-}
 
-.tags span {
-    background: var(--paper-dark);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.25rem 0.625rem;
-    font-size: 0.8rem;
+    & span {
+        background: var(--paper-dark);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.25rem 0.625rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* --- Library Page Layout --- */
@@ -246,26 +247,26 @@ nav a {
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 1.5rem;
-}
 
-.filter-sidebar h3 {
-    margin-top: 0;
-    font-family: var(--font-serif);
-}
+    & h3 {
+        margin-top: 0;
+        font-family: var(--font-serif);
+    }
 
-.filter-sidebar hr {
-    width: 100%;
-    margin: 1.5rem 0;
-}
+    & hr {
+        width: 100%;
+        margin: 1.5rem 0;
+    }
 
-.filter-sidebar label {
-    display: block;
-    margin: 0.625rem 0;
-    cursor: pointer;
-}
+    & label {
+        display: block;
+        margin: 0.625rem 0;
+        cursor: pointer;
+    }
 
-.filter-sidebar input[type="checkbox"] {
-    margin-right: 0.5rem;
+    & input[type="checkbox"] {
+        margin-right: 0.5rem;
+    }
 }
 
 #searchInput {
@@ -286,9 +287,12 @@ nav a {
 }
 
 /* --- Composition Pages --- */
-.site-title,
-.site-title:hover {
+.site-title {
     color: inherit;
+
+    &:hover {
+        color: var(--accent);
+    }
 }
 
 .back-link {
@@ -298,10 +302,16 @@ nav a {
 .composition {
     max-width: 900px;
     margin: 5rem auto;
-}
 
-.composition h2 {
-    text-align: center;
+    & h2 {
+        text-align: center;
+    }
+
+    & .download-btn {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+    }
 }
 
 .composition-thumbnail {
@@ -320,38 +330,33 @@ nav a {
     border-collapse: collapse;
     border: 1px solid var(--border);
     background: var(--surface);
-}
 
-.composition-info th,
-.composition-info td {
-    padding: 0.875rem 1.125rem;
-    border-bottom: 1px solid var(--border);
-    text-align: left;
-}
+    & th,
+    & td {
+        padding: 0.875rem 1.125rem;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+    }
 
-.composition-info tr:last-child th,
-.composition-info tr:last-child td {
-    border-bottom: none;
-}
+    & tr:last-child th,
+    & tr:last-child td {
+        border-bottom: none;
+    }
 
-.composition-info th {
-    width: 40%;
-    background: var(--paper-dark);
-}
-
-.composition .download-btn {
-    display: table;
-    margin: 0 auto;
+    & th {
+        width: 40%;
+        background: var(--paper-dark);
+    }
 }
 
 .composition-description {
     max-width: 800px;
     margin: 3.75rem auto;
-}
 
-.composition-description h3 {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
+    & h3 {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+    }
 }
 
 /* --- Footer --- */
