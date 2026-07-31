@@ -148,7 +148,6 @@ details summary {
 /* --- Header & Navigation --- */
 header {
     text-align: center;
-    padding: 4.25rem 1.25rem 3rem;
     border-block-end: 1px solid var(--border);
 }
 
