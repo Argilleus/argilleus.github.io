@@ -4,7 +4,7 @@ const musicGrid = document.getElementById("musicGrid");
 const searchInput = document.getElementById("searchInput");
 const resultCount = document.getElementById("resultCount");
 
-const composerContainer = document.getElementById("composerFilters");
+const centuryContainer = document.getElementById("centuryFilters");
 const periodContainer = document.getElementById("periodFilters");
 const instrumentContainer = document.getElementById("instrumentFilters");
 
@@ -41,14 +41,6 @@ function renderCards(list) {
 
     list.forEach(work => {
 
-        const instruments = work.instrumentation
-            .map(i => `<span>${i}</span>`)
-            .join("");
-
-        const catalogue = work.catalogue
-            ? `<span>${work.catalogue}</span>`
-            : "";
-
         musicGrid.innerHTML += `
 
 <article class="music-card"
@@ -69,11 +61,9 @@ onclick="window.location.href='${work.page}'">
 
     <div class="tags">
 
-    ${work.period ? `<span>${work.period}</span>` : ""}
-
-    ${work.instrument ? `<span>${work.instrument}</span>` : ""}
-        
-    ${work.century ? `<span>${work.century}</span>` : ""}
+        ${work.period ? `<span>${work.period}</span>` : ""}
+        ${work.instrument ? `<span>${work.instrument}</span>` : ""}
+        ${work.century ? `<span>${work.century}</span>` : ""}
 
     </div>
 
@@ -102,9 +92,9 @@ onclick="window.location.href='${work.page}'">
 function createFilters() {
 
     createCheckboxGroup(
-        uniqueValues("composer"),
-        composerContainer,
-        "composer-filter"
+        uniqueValues("century"),
+        centuryContainer,
+        "century-filter"
     );
 
     createCheckboxGroup(
@@ -131,7 +121,7 @@ function uniqueValues(property) {
 
         if (Array.isArray(value)) {
             values.push(...value);
-        } else {
+        } else if (value) {
             values.push(value);
         }
 
@@ -178,7 +168,7 @@ function filterCatalog() {
 
     const search = searchInput.value.toLowerCase().trim();
 
-    const composers = checkedValues("composer-filter");
+    const centuries = checkedValues("century-filter");
     const periods = checkedValues("period-filter");
     const instruments = checkedValues("instrument-filter");
 
@@ -189,6 +179,7 @@ function filterCatalog() {
             work.title,
             work.composer,
             work.period,
+            work.century || "",
             work.genre || "",
             work.catalogue || "",
             ...(work.instrumentation || [])
@@ -199,23 +190,23 @@ function filterCatalog() {
             search === "" ||
             searchable.includes(search);
 
-        const matchesComposer =
-            composers.length === 0 ||
-            composers.includes(work.composer.toLowerCase());
+        const matchesCentury =
+            centuries.length === 0 ||
+            centuries.includes((work.century || "").toLowerCase());
 
         const matchesPeriod =
             periods.length === 0 ||
-            periods.includes(work.period.toLowerCase());
+            periods.includes((work.period || "").toLowerCase());
 
         const matchesInstrument =
             instruments.length === 0 ||
-            work.instrumentation.some(i =>
+            (work.instrumentation || []).some(i =>
                 instruments.includes(i.toLowerCase())
             );
 
         return (
             matchesSearch &&
-            matchesComposer &&
+            matchesCentury &&
             matchesPeriod &&
             matchesInstrument
         );
