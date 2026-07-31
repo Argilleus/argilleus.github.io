@@ -112,6 +112,7 @@ hr {
     &:hover,
     &:focus-visible {
         background-color: var(--accent-light);
+       color: #ffffff;
     }
 }
 
