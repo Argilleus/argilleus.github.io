@@ -433,6 +433,13 @@ footer {
     }
 }
 
+/* Apply 80% zoom only on desktop/larger screens */
+@media (min-width: 1024px) {
+    body {
+        zoom: 0.8;
+    }
+}
+
 /* Accessibility: Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
