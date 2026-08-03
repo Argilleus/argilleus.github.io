@@ -405,6 +405,54 @@ nav {
     }
 }
 
+/* --- Score & Parts Section --- */
+.parts-download-container {
+    max-inline-size: 600px;
+    margin-block: 2.5rem;
+    margin-inline: auto;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 2rem;
+
+    & h3 {
+        margin-block-start: 0;
+        margin-block-end: 1rem;
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        border-block-end: 1px solid var(--border-light);
+        padding-block-end: 0.5rem;
+    }
+}
+
+.parts-list {
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+
+    & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 0.75rem;
+        margin-block: 0;
+        border-block-end: 1px solid var(--border-light);
+
+        &:last-child {
+            border-block-end: none;
+        }
+
+        & span {
+            font-weight: 600;
+        }
+    }
+}
+
+.part-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.9rem;
+}
+
 /* --- Footer --- */
 footer {
     margin-block-start: 6.25rem;
