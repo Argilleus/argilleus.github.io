@@ -80,5 +80,35 @@
         "page": "scores/flutepartita.html",
         "about": "The Partita in A minor for solo flute, BWV 1013, is a four-movement suite composed by Johann Sebastian Bach around 1722–1723. Consisting of an Allemande, Corrente, Sarabande, and Bourrée anglaise, it is Bach's only surviving work for unaccompanied solo flute and stands as a monumental cornerstone of the instrument's repertoire.",
         "featured": false
+    },
+    {
+    "slug": "pavaneorchestra",
+    "title": "Pavane pour une infante défunte (Orchestral)",
+    "composer": "Maurice Ravel",
+    "period": "Modern",
+    "century": "20th century",
+    "instrumentation": [
+        "Flute", "Oboe", "Clarinet", "Bassoon", "Horn", "Harp", "Violin", "Viola", "Cello", "Double Bass"
+    ],
+    "year": 1910,
+    "thumbnail": "images/pavaneorchestra.png",
+    "pdf": "pdf/pavane-full-score.pdf",
+    "parts": [
+        { "name": "Full Score", "pdf": "pdf/pavane-full-score.pdf" },
+        { "name": "Flutes", "pdf": "pdf/parts/pavane-flutes.pdf" },
+        { "name": "Oboe", "pdf": "pdf/parts/pavane-oboe.pdf" },
+        { "name": "Clarinets", "pdf": "pdf/parts/pavane-clarinets.pdf" },
+        { "name": "Bassoons", "pdf": "pdf/parts/pavane-bassoons.pdf" },
+        { "name": "Horns", "pdf": "pdf/parts/pavane-horns.pdf" },
+        { "name": "Harp", "pdf": "pdf/parts/pavane-harp.pdf" },
+        { "name": "Violins I", "pdf": "pdf/parts/pavane-violin1.pdf" },
+        { "name": "Violins II", "pdf": "pdf/parts/pavane-violin2.pdf" },
+        { "name": "Violas", "pdf": "pdf/parts/pavane-viola.pdf" },
+        { "name": "Cellos", "pdf": "pdf/parts/pavane-cello.pdf" },
+        { "name": "Double Basses", "pdf": "pdf/parts/pavane-bass.pdf" }
+    ],
+    "page": "scores/pavane-orchestra.html",
+    "about": "Orchestrated by Ravel in 1910...",
+    "featured": false
     }
 ]
