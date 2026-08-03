@@ -94,21 +94,69 @@
     "thumbnail": "images/pavaneorchestra.png",
     "pdf": "pdf/pavane-full-score.pdf",
     "parts": [
-        { "name": "Full Score", "pdf": "pdf/pavane-full-score.pdf" },
-        { "name": "Flutes", "pdf": "pdf/parts/pavane-flutes.pdf" },
-        { "name": "Oboe", "pdf": "pdf/parts/pavane-oboe.pdf" },
-        { "name": "Clarinets", "pdf": "pdf/parts/pavane-clarinets.pdf" },
-        { "name": "Bassoons", "pdf": "pdf/parts/pavane-bassoons.pdf" },
-        { "name": "Horns", "pdf": "pdf/parts/pavane-horns.pdf" },
-        { "name": "Harp", "pdf": "pdf/parts/pavane-harp.pdf" },
-        { "name": "Violins I", "pdf": "pdf/parts/pavane-violin1.pdf" },
-        { "name": "Violins II", "pdf": "pdf/parts/pavane-violin2.pdf" },
-        { "name": "Violas", "pdf": "pdf/parts/pavane-viola.pdf" },
-        { "name": "Cellos", "pdf": "pdf/parts/pavane-cello.pdf" },
-        { "name": "Double Basses", "pdf": "pdf/parts/pavane-bass.pdf" }
+        { 
+            "name": "Full Score", 
+            "pdf": "pdf/pavane-full-score.pdf",
+            "thumbnail": "images/pavaneorchestra.png"
+        },
+        { 
+            "name": "Flutes 1 & 2", 
+            "pdf": "pdf/parts/pavane-flutes.pdf",
+            "thumbnail": "images/pavane-flutes.png"
+        },
+        { 
+            "name": "Oboe", 
+            "pdf": "pdf/parts/pavane-oboe.pdf",
+            "thumbnail": "images/pavane-oboe.png"
+        },
+        { 
+            "name": "Clarinets in A 1 & 2", 
+            "pdf": "pdf/parts/pavane-clarinets.pdf",
+            "thumbnail": "images/pavane-clarinets.png"
+        },
+        { 
+            "name": "Bassoons 1 & 2", 
+            "pdf": "pdf/parts/pavane-bassoons.pdf",
+            "thumbnail": "images/pavane-bassoons.png"
+        },
+        { 
+            "name": "Horns in F 1 & 2", 
+            "pdf": "pdf/parts/pavane-horns.pdf",
+            "thumbnail": "images/pavane-horns.png"
+        },
+        { 
+            "name": "Harp", 
+            "pdf": "pdf/parts/pavane-harp.pdf",
+            "thumbnail": "images/pavane-harp.png"
+        },
+        { 
+            "name": "Violins I", 
+            "pdf": "pdf/parts/pavane-violin1.pdf",
+            "thumbnail": "images/pavane-violin1.png"
+        },
+        { 
+            "name": "Violins II", 
+            "pdf": "pdf/parts/pavane-violin2.pdf",
+            "thumbnail": "images/thumbnails/pavane-violin2.png"
+        },
+        { 
+            "name": "Violas", 
+            "pdf": "pdf/parts/pavane-viola.pdf",
+            "thumbnail": "images/pavane-viola.png"
+        },
+        { 
+            "name": "Cellos", 
+            "pdf": "pdf/parts/pavane-cello.pdf",
+            "thumbnail": "images/pavane-cello.png"
+        },
+        { 
+            "name": "Double Basses", 
+            "pdf": "pdf/parts/pavane-bass.pdf",
+            "thumbnail": "images/pavane-bass.png"
+        }
     ],
     "page": "scores/pavaneorchestra.html",
-    "about": "Orchestrated by Ravel in 1910...",
+    "about": "Pavane pour une infante défunte was originally written for solo piano in 1899 and orchestrated by Ravel in 1910. The orchestral version features a reduced orchestra consisting of a wind quintet (woodwinds and horn), harp and strings, highlighting Ravel's masterly use of orchestral color and timbre.",
     "featured": false
     }
 ]
