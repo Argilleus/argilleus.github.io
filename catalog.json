@@ -107,7 +107,7 @@
         { "name": "Cellos", "pdf": "pdf/parts/pavane-cello.pdf" },
         { "name": "Double Basses", "pdf": "pdf/parts/pavane-bass.pdf" }
     ],
-    "page": "scores/pavane-orchestra.html",
+    "page": "scores/pavaneorchestra.html",
     "about": "Orchestrated by Ravel in 1910...",
     "featured": false
     }
