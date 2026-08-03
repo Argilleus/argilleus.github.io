@@ -32,14 +32,48 @@ async function loadComposition() {
 
         document.title = `${work.title} | Argilleus Music Library`;
 
-        // Add this to dynamically update the meta description tag:
-const metaDescription = document.querySelector('meta[name="description"]');
-if (metaDescription) {
-    metaDescription.setAttribute(
-        "content",
-        `Free engraved edition of ${work.composer}'s ${work.title}. Download the PDF from Argilleus Music Library.`
-    );
-}
+        // Dynamically update the meta description tag
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute(
+                "content",
+                `Free engraved edition of ${work.composer}'s ${work.title}. Download the PDF from Argilleus Music Library.`
+            );
+        }
+
+        // Build the download section based on whether parts are available
+        let downloadSectionHtml = "";
+
+        if (work.parts && work.parts.length > 0) {
+            const partsList = work.parts
+                .map(part => `
+                    <li>
+                        <span>${part.name}</span>
+                        <a href="../${part.pdf}" download class="download-btn part-btn">Download PDF</a>
+                    </li>
+                `)
+                .join("");
+
+            downloadSectionHtml = `
+                <div class="parts-download-container">
+                    <h3>Download Score & Parts</h3>
+                    <ul class="parts-list">
+                        ${partsList}
+                    </ul>
+                </div>
+            `;
+        } else {
+            downloadSectionHtml = `
+                <a
+                    href="../${work.pdf}"
+                    download
+                    class="download-btn">
+
+                    Download PDF
+
+                </a>
+            `;
+        }
 
         container.innerHTML = `
 
@@ -84,14 +118,7 @@ if (metaDescription) {
 
     </table>
 
-    <a
-        href="../${work.pdf}"
-        download
-        class="download-btn">
-
-        Download PDF
-
-    </a>
+    ${downloadSectionHtml}
 
     <section class="composition-description">
 
