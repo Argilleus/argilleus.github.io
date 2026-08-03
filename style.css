@@ -448,6 +448,22 @@ nav {
     }
 }
 
+.part-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.part-thumbnail {
+    inline-size: 48px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    background-color: var(--surface);
+    flex-shrink: 0;
+}
+
 .part-btn {
     padding: 0.4rem 0.85rem;
     font-size: 0.9rem;
