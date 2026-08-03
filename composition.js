@@ -48,7 +48,10 @@ async function loadComposition() {
             const partsList = work.parts
                 .map(part => `
                     <li>
-                        <span>${part.name}</span>
+                        <div class="part-info">
+                            ${part.thumbnail ? `<img src="../${part.thumbnail}" alt="${part.name} preview" class="part-thumbnail">` : ''}
+                            <span class="part-name">${part.name}</span>
+                        </div>
                         <a href="../${part.pdf}" download class="download-btn part-btn">Download PDF</a>
                     </li>
                 `)
