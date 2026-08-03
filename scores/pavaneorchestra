@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fallback title while JavaScript loads -->
+    <title>Argilleus Music Library</title>
+
+    <!-- Meta description tag with placeholder/default content -->
+    <meta name="description" content="Free engraved editions from Argilleus Music Library.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>
+            Argilleus Music Library
+    </h1>
+
+    <p class="tagline">
+        Free sheet music, carefully engraved.
+    </p>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../library.html">Library</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="composition">
+
+    <div id="compositionContent">
+
+        <!-- Filled automatically by composition.js -->
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <hr>
+
+    <p>© 2026 Argilleus.</p>
+
+</footer>
+
+<script src="../composition.js"></script>
+
+</body>
+</html>
