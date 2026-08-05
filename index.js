@@ -44,29 +44,6 @@ async function init() {
     }
 }
 
-function initTheme() {
-    if (!themeToggle) return;
-
-    // Load saved preference
-    const dark = localStorage.getItem("theme") === "dark";
-
-    if (dark) {
-        document.documentElement.classList.add("dark-mode");
-    }
-
-    themeToggle.textContent = dark ? "☀︎" : "☾";
-
-    themeToggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark-mode");
-
-        const dark = document.documentElement.classList.contains("dark-mode");
-
-        themeToggle.textContent = dark ? "☀︎" : "☾";
-
-        localStorage.setItem("theme", dark ? "dark" : "light");
-    });
-}
-
 function handleSearch(e) {
     const query = e.target.value.toLowerCase().trim();
 
