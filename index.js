@@ -48,19 +48,20 @@ function initTheme() {
     if (!themeToggle) return;
 
     // Load saved preference
-    if (localStorage.getItem("theme") === "dark") {
+    const dark = localStorage.getItem("theme") === "dark";
+
+    if (dark) {
         document.documentElement.classList.add("dark-mode");
-        themeToggle.textContent = "☀️ Light";
-    } else {
-        themeToggle.textContent = "🌙 Dark";
     }
+
+    themeToggle.textContent = dark ? "☀︎" : "☾";
 
     themeToggle.addEventListener("click", () => {
         document.documentElement.classList.toggle("dark-mode");
 
         const dark = document.documentElement.classList.contains("dark-mode");
 
-        themeToggle.textContent = dark ? "☀️ Light" : "🌙 Dark";
+        themeToggle.textContent = dark ? "☀︎" : "☾";
 
         localStorage.setItem("theme", dark ? "dark" : "light");
     });
