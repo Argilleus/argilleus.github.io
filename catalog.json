@@ -158,5 +158,48 @@
     "page": "scores/pavaneorchestra.html",
     "about": "Pavane pour une infante défunte was originally written for solo piano in 1899 and orchestrated by Ravel in 1910. The orchestral version features a reduced orchestra consisting of a wind quintet (woodwinds and horn), harp and strings, highlighting Ravel's masterly use of orchestral color and timbre.",
     "featured": false
+    },
+    {
+  "slug": "suite-bergamasque",
+  "title": "Suite bergamasque",
+  "composer": "Claude Debussy",
+  "period": "Impressionist",
+  "century": "19th century",
+  "instrumentation": [
+    "Piano"
+  ],
+  "year": 1890,
+  "thumbnail": "images/suite-bergamasque.png",
+  "pdf": "pdf/suite-bergamasque-full.pdf",
+  "parts": [
+    {
+      "name": "Full Suite",
+      "pdf": "pdf/suite-bergamasque-full.pdf",
+      "thumbnail": "images/suite-bergamasque.png"
+    },
+    {
+      "name": "I. Prélude",
+      "pdf": "pdf/parts/suite-bergamasque-1-prelude.pdf",
+      "thumbnail": "images/suite-bergamasque-prelude.png"
+    },
+    {
+      "name": "II. Menuet",
+      "pdf": "pdf/parts/suite-bergamasque-2-menuet.pdf",
+      "thumbnail": "images/suite-bergamasque-menuet.png"
+    },
+    {
+      "name": "III. Clair de lune",
+      "pdf": "pdf/parts/suite-bergamasque-3-clair-de-lune.pdf",
+      "thumbnail": "images/suite-bergamasque-clair-de-lune.png"
+    },
+    {
+      "name": "IV. Passepied",
+      "pdf": "pdf/parts/suite-bergamasque-4-passepied.pdf",
+      "thumbnail": "images/suite-bergamasque-passepied.png"
+    }
+  ],
+  "page": "scores/suite-bergamasque.html",
+  "about": "Suite bergamasque is one of Claude Debussy's most famous piano suites, composed around 1890 and significantly revised prior to its publication in 1905. Drawing inspiration from Paul Verlaine's poem 'Clair de lune', the four-movement work—Prélude, Menuet, Clair de lune, and Passepied—blends Baroque dance forms with Debussy's signature Impressionist harmonic language, delicate textures, and evocative atmosphere.",
+  "featured": false
     }
 ]
