@@ -33,59 +33,6 @@
     --transition-med: 0.25s ease;
 }
 
-/* ===========================
-   DARK MODE OVERRIDES
-=========================== */
-
-html.dark-mode {
-    color-scheme: dark;
-
-    /* Warm dark paper & surface tones */
-    --paper: #181715;
-    --paper-dark: #24221f;
-    --surface: #201f1c;
-    
-    /* Readable warm light text */
-    --text: #e6e2d8;
-    --text-muted: #a69f92;
-    
-    /* Warm brass/gold accent matching classic score aesthetic */
-    --accent: #d4a359;
-    --accent-light: #e5b872;
-    
-    /* Dark subtle borders */
-    --border: #38342f;
-    --border-light: #2c2925;
-}
-
-/* Adjustments for specific components in Dark Mode */
-html.dark-mode #searchInput {
-    background-color: var(--surface);
-    color: var(--text);
-    border-color: var(--border);
-}
-
-html.dark-mode #searchInput:focus {
-    border-color: var(--accent);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-html.dark-mode .no-results {
-    color: var(--text-muted);
-}
-
-/* Ensure buttons retain readable dark text when using the light gold accent */
-html.dark-mode :is(.btn, .download-btn, .browse-btn) {
-    color: #181715;
-    background-color: var(--accent);
-
-    &:hover,
-    &:focus-visible {
-        background-color: var(--accent-light);
-        color: #181715;
-    }
-}
-
 /* --- Base & Modern Reset --- */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -102,6 +49,7 @@ body {
     font-family: var(--font-sans);
     font-size: 1.125rem;
     line-height: 1.7;
+    transition: background-color var(--transition-med), color var(--transition-med);
 }
 
 img, picture, svg, video {
@@ -160,12 +108,12 @@ hr {
     border: none;
     cursor: pointer;
     text-align: center;
-    transition: background-color var(--transition-fast);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 
     &:hover,
     &:focus-visible {
         background-color: var(--accent-light);
-       color: #ffffff;
+        color: #ffffff;
     }
 }
 
@@ -238,25 +186,28 @@ nav {
 
 #searchInput {
     width: 100%;
-    padding: 1.2rem 1.5rem;
-    font-size: 1.25rem;
-    border: 2px solid #ccc;
+    padding: 1rem 1.25rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    color: var(--text);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
     box-sizing: border-box;
-}
 
-#searchInput:focus {
-    border-color: #333;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    &:focus-visible,
+    &:focus {
+        border-color: var(--accent);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
 }
 
 .no-results {
     grid-column: 1 / -1;
     font-size: 1.1rem;
-    color: #666;
+    color: var(--text-muted);
     padding: 2rem 0;
 }
 
@@ -273,7 +224,7 @@ nav {
     padding: 1.375rem;
     text-align: center;
     cursor: pointer;
-    transition: transform var(--transition-med), box-shadow var(--transition-med);
+    transition: transform var(--transition-med), box-shadow var(--transition-med), background-color var(--transition-med);
 
     &:hover,
     &:focus-within {
@@ -360,18 +311,6 @@ nav {
 
     & input[type="checkbox"] {
         margin-inline-end: 0.5rem;
-    }
-}
-
-#searchInput {
-    inline-size: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border);
-    background-color: var(--surface);
-    font-size: 1rem;
-    
-    &:focus-visible {
-        border-color: var(--accent);
     }
 }
 
@@ -532,7 +471,7 @@ footer {
     font-size: 0.95rem;
 }
 
-/* --- Media Queries (Modern Syntax) --- */
+/* --- Media Queries --- */
 @media (width <= 900px) {
     .library-layout {
         grid-template-columns: 1fr;
@@ -550,19 +489,57 @@ footer {
     }
 }
 
-/* Apply 80% zoom only on desktop/larger screens */
 @media (min-width: 1024px) {
     body {
         zoom: 0.8;
     }
 }
 
-/* Accessibility: Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ===========================
+   DARK MODE OVERRIDES
+=========================== */
+html.dark-mode {
+    color-scheme: dark;
+
+    /* Warm dark paper & surface tones */
+    --paper: #181715;
+    --paper-dark: #24221f;
+    --surface: #201f1c;
+    
+    /* Readable warm light text */
+    --text: #e6e2d8;
+    --text-muted: #a69f92;
+    
+    /* Classical warm brass/gold accent */
+    --accent: #d4a359;
+    --accent-light: #e5b872;
+    
+    /* Dark subtle borders */
+    --border: #38342f;
+    --border-light: #2c2925;
+}
+
+/* Specific component overrides for Dark Mode */
+html.dark-mode #searchInput:focus {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+html.dark-mode :is(.btn, .download-btn, .browse-btn) {
+    color: #181715;
+    background-color: var(--accent);
+
+    &:hover,
+    &:focus-visible {
+        background-color: var(--accent-light);
+        color: #181715;
     }
 }
