@@ -8,7 +8,6 @@ const searchInput = document.getElementById("searchInput");
 const sectionTitle = document.getElementById("sectionTitle");
 const sectionSubtext = document.getElementById("sectionSubtext");
 const browseBtnWrapper = document.getElementById("browseBtnWrapper");
-const themeToggle = document.getElementById("themeToggle");
 
 let fullCatalog = [];
 
@@ -23,7 +22,7 @@ async function init() {
         }
 
         fullCatalog = await response.json();
-
+        
         // Initial render: show featured works
         renderFeatured();
 
@@ -32,12 +31,8 @@ async function init() {
             searchInput.addEventListener("input", handleSearch);
         }
 
-        // Initialize theme
-        initTheme();
-
     } catch (error) {
         console.error(error);
-
         if (musicGrid) {
             musicGrid.innerHTML = `<p>Unable to load scores.</p>`;
         }
@@ -52,7 +47,6 @@ function handleSearch(e) {
         if (sectionTitle) sectionTitle.textContent = "Featured Scores";
         if (sectionSubtext) sectionSubtext.style.display = "block";
         if (browseBtnWrapper) browseBtnWrapper.style.display = "block";
-
         renderFeatured();
         return;
     }
@@ -62,23 +56,15 @@ function handleSearch(e) {
     if (sectionSubtext) sectionSubtext.style.display = "none";
     if (browseBtnWrapper) browseBtnWrapper.style.display = "none";
 
-    // Filter catalog matching title, composer, period, instrumentation, or catalogue number
+    // Filter catalog matching title, composer, period, or instrumentation
     const matches = fullCatalog.filter(work => {
         const titleMatch = work.title?.toLowerCase().includes(query);
         const composerMatch = work.composer?.toLowerCase().includes(query);
         const periodMatch = work.period?.toLowerCase().includes(query);
-        const instrumentMatch = work.instrumentation?.some(inst =>
-            inst.toLowerCase().includes(query)
-        );
+        const instrumentMatch = work.instrumentation?.some(inst => inst.toLowerCase().includes(query));
         const catalogueMatch = work.catalogue?.toLowerCase().includes(query);
 
-        return (
-            titleMatch ||
-            composerMatch ||
-            periodMatch ||
-            instrumentMatch ||
-            catalogueMatch
-        );
+        return titleMatch || composerMatch || periodMatch || instrumentMatch || catalogueMatch;
     });
 
     renderGrid(matches);
@@ -94,12 +80,10 @@ function renderFeatured() {
 
 function renderGrid(works) {
     if (!musicGrid) return;
-
     musicGrid.innerHTML = "";
 
     if (works.length === 0) {
-        musicGrid.innerHTML =
-            `<p class="no-results">No scores found matching your search.</p>`;
+        musicGrid.innerHTML = `<p class="no-results">No scores found matching your search.</p>`;
         return;
     }
 
