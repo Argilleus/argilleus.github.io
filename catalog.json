@@ -1,7 +1,7 @@
 [
     {
         "slug": "gymnopedie",
-        "title": "Gymnopédie No. 1",
+        "title": "Trois Gymnopédies",
         "composer": "Erik Satie",
         "period": "Modern",
         "century": "19th century",
@@ -11,8 +11,30 @@
         "year": 1888,
         "thumbnail": "images/gymnopedie.png",
         "pdf": "pdf/gymnopedie.pdf",
+        "parts": [
+        { 
+            "name": "Full Score", 
+            "pdf": "pdf/gymnopedie.pdf",
+            "thumbnail": "images/gymnopedie.png"
+        },
+                    { 
+            "name": "No. 1", 
+            "pdf": "pdf/gymnopedie.pdf",
+            "thumbnail": "images/gymnopedie.png"
+        },
+                    { 
+            "name": "No. 2", 
+            "pdf": "pdf/gymnopedie.pdf",
+            "thumbnail": "images/gymnopedie.png"
+        },
+                    { 
+            "name": "No.3 ", 
+            "pdf": "pdf/gymnopedie.pdf",
+            "thumbnail": "images/gymnopedie.png"
+        }
+        ]
         "page": "scores/gymnopedie.html",
-        "about": "Gymnopédie No. 1 is the first of three Gymnopédies composed by Erik Satie in 1888. Marked Lent et douloureux, the work is characterized by its serene melody, gentle harmonic language, and understated rhythmic flow. Its simplicity and quiet introspection have made it one of Satie's most celebrated compositions and a landmark of the early modern piano repertoire.",
+        "about": "The Gymnopédies are a set of three piano compositions written by Erik Satie in 1888. The work is characterized by its serene melodies, gentle harmonic language, and understated rhythmic flow. Its simplicity and quiet introspection have made it one of Satie's most celebrated compositions and a landmark of the early modern piano repertoire.",
         "featured": true
     },
     {
