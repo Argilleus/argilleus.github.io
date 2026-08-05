@@ -2,9 +2,13 @@
 <html lang="en">
 
 <head>
+
     <meta name="google-site-verification" content="jMSx0SDKSqtj_6iInma7B4L1QRDiOI1_wNRej1wbgQQ" />
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Argilleus Music Library | Free Public Domain Sheet Music</title>
 
@@ -12,20 +16,23 @@
           content="Free, carefully engraved editions of public domain classical sheet music. Modern digital scores for reading, printing, and performance.">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-    <h1>Argilleus Music Library</h1>
-    
+<!-- Dark Mode Toggle -->
 <button
     id="themeToggle"
     class="theme-toggle-btn"
     aria-label="Toggle dark mode"
     title="Toggle dark mode">
 </button>
-    
+
+<header>
+
+    <h1>Argilleus Music Library</h1>
+
     <nav>
         <a href="library.html">Library</a>
         <a href="#about">About</a>
@@ -33,25 +40,32 @@
         <a href="#license">License</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
 <main>
 
     <!-- SEARCH BAR SECTION -->
     <section id="search-section" class="search-section">
+
         <div class="search-container">
-            <input 
-                type="search" 
-                id="searchInput" 
-                placeholder="Search by title, composer, period, or instrument..." 
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search by title, composer, period, or instrument..."
                 aria-label="Search music catalog">
+
         </div>
+
     </section>
 
     <section id="featured">
+
         <h2 id="sectionTitle">Featured Scores</h2>
+
         <p id="sectionSubtext"></p>
-    
+
         <p id="browseBtnWrapper">
             <a href="library.html" class="browse-btn">
                 Browse the complete library →
@@ -61,16 +75,20 @@
         <div id="musicGrid" class="music-grid">
             <!-- Scores loaded dynamically via JS -->
         </div>
+
     </section>
 
     <section id="about">
+
         <h2>About Argilleus</h2>
+
         <p>
-            Argilleus provides newly engraved editions of public domain classical music. 
-            Unlike scanned historical editions, these scores are digitally engraved for clarity, readability, and high-quality printing. 
-            Every score is available free of charge as a downloadable PDF.
+            Argilleus provides newly engraved editions of public domain classical music.
+            Unlike scanned historical editions, these scores are digitally engraved for
+            clarity, readability, and high-quality printing. Every score is available
+            free of charge as a downloadable PDF.
         </p>
-        
+
         <p>
             The International Music Score Library Project (IMSLP/Petrucci Music Library)
             is one of the greatest resources available to musicians, and I have relied
@@ -95,36 +113,46 @@
             Every edition is prepared with careful attention to engraving quality,
             readability, and consistency.
         </p>
+
     </section>
 
     <section id="support">
+
         <h2>Support</h2>
+
         <p>All editions are provided free of charge.</p>
+
         <p>
             If you find these scores useful, you are welcome to make a voluntary
             donation to support future engraving work. Donations are entirely
             optional and do not purchase access to any content.
         </p>
+
     </section>
 
     <section id="license">
+
         <h2>License</h2>
 
         <h3>Copyright</h3>
+
         <p>
-            The original musical compositions published on this website are believed to be in the public domain. 
-            Copyright in the original compositions has expired under the laws of many countries. 
-            Copyright laws vary between jurisdictions. 
-            Users are responsible for ensuring that downloading and using these materials is lawful in their own country.
+            The original musical compositions published on this website are believed
+            to be in the public domain. Copyright in the original compositions has
+            expired under the laws of many countries. Copyright laws vary between
+            jurisdictions. Users are responsible for ensuring that downloading and
+            using these materials is lawful in their own country.
         </p>
+
         <p>
-            While the original musical compositions are in the public domain,
-            the digital engravings, page layout, formatting, editorial decisions,
-            and all original material created for these editions are
-            © 2026 Argilleus unless otherwise stated.
+            While the original musical compositions are in the public domain, the
+            digital engravings, page layout, formatting, editorial decisions, and
+            all original material created for these editions are © 2026 Argilleus
+            unless otherwise stated.
         </p>
 
         <h3>You May</h3>
+
         <ul>
             <li>Download these editions free of charge.</li>
             <li>Print unlimited copies for personal, educational, rehearsal, and performance use.</li>
@@ -133,6 +161,7 @@
         </ul>
 
         <h3>Attribution</h3>
+
         <p>
             If you redistribute these editions, please credit
             <strong>Argilleus</strong> as the source.
@@ -141,6 +170,7 @@
         </p>
 
         <h3>Restrictions</h3>
+
         <ul>
             <li>Do not sell these editions or charge for access to them.</li>
             <li>Do not include them in commercial publications without permission.</li>
@@ -149,29 +179,40 @@
         </ul>
 
         <h3>Disclaimer</h3>
+
         <p>
-            These editions are provided free of charge in the hope that they will
-            be useful. While every effort has been made to ensure their accuracy,
-            they are provided "as is", without warranty of any kind.
-            Argilleus accepts no liability for errors, omissions, or damages
-            arising from their use.
+            These editions are provided free of charge in the hope that they will be
+            useful. While every effort has been made to ensure their accuracy, they
+            are provided "as is", without warranty of any kind. Argilleus accepts no
+            liability for errors, omissions, or damages arising from their use.
         </p>
+
     </section>
 
 </main>
 
 <footer>
+
     <section id="contact">
+
         <h2>Contact</h2>
-        <p>Questions, corrections, or suggestions are always welcome.</p>
+
+        <p>
+            Questions, corrections, or suggestions are always welcome.
+        </p>
+
         <p>
             <a href="mailto:argilleus@gmail.com">argilleus@gmail.com</a>
         </p>
+
     </section>
+
     <p>© 2026 Argilleus.</p>
+
 </footer>
 
 <script src="index.js"></script>
+<script src="theme.js"></script>
 
 </body>
 </html>
