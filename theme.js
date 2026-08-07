@@ -6,7 +6,7 @@
 const link = document.createElement('link');
 link.rel = 'icon';
 link.type = 'image/x-icon'; // Use 'image/png' if using a PNG
-link.href = 'favicon.ico';   // Path to your icon file
+link.href = '../favicon.ico';   // Path to your icon file
 
 document.head.appendChild(link);
 
