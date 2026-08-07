@@ -147,7 +147,8 @@ async function loadComposition() {
         </p>
 
         <p>
-        *except when printing full orchestral scores, which should be printed on A3 paper.
+        *except when printing full orchestral scores, which should be printed on A3 paper 
+        unless you want to scale it down to A4 size, which might make the score too small.
     </p>
     
     </section>
