@@ -141,10 +141,14 @@ async function loadComposition() {
         <h3>Printing Instructions</h3>
 
         <p>
-            If you're going to print this sheet music, use standard A4 paper, print on both sides and flip on long edge.
+            If you're going to print this sheet music, use standard A4 paper*, print on both sides and flip on long edge.
             Print all pages in order without removing any page, even if the page is blank. 
             The pdf is already formatted for printing, and the sheet music was engraved with page-turning in mind.
         </p>
+
+        <p>
+        *except when printing full orchestral scores, which should be printed on A3 paper.
+    </p>
     
     </section>
 
