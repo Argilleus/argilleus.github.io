@@ -150,6 +150,9 @@ async function loadComposition() {
         *except when printing full orchestral scores, which should be printed on A3 paper 
         unless you want to scale it down to A4 size, which might make the score too small.
     </p>
+
+    <iframe id='kofiframe' src='https://ko-fi.com/argilleus/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;' height='600'>
+            </iframe>
     
     </section>
 
